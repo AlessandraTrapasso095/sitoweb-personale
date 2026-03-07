@@ -272,6 +272,17 @@ main {
   padding-top: 200px;
 }
 
+main > section,
+main > div {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 760px;
+}
+
+main > section:first-child,
+main > div:first-child {
+  content-visibility: visible;
+}
+
 /* FOOTER */
 .site-footer {
   position: relative;
@@ -389,6 +400,35 @@ main {
 
 .contact-form__btn:active {
   transform: translateY(-2px);
+}
+
+.site-footer__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 34px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 0.35px;
+  color: #ffffff;
+  text-decoration: none;
+  background: linear-gradient(135deg, #3955ff, #ff4fae);
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+  transform: translateY(0);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.site-footer__cta:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.35);
+  filter: saturate(1.05);
+}
+
+.site-footer__cta:active {
+  transform: translateY(-1px);
 }
 
 /* NAV RESPONSIVE "HAMBURGER" */
@@ -647,6 +687,19 @@ main {
   font-weight: 800;
   letter-spacing: 0.2px;
   transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.contact-form__btn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.contact-form__note {
+  margin: 0;
+}
+
+.hp-field {
+  display: none !important;
 }
 
 .contact-social {

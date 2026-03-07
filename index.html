@@ -33,81 +33,9 @@
   </head>
    
   <!-- BODY -->
- <body id="home">
+ <body id="home" data-base-path="." data-page="home">
    <!-- HEADER -->
-   <header class="site-header" aria-label="Header principale">
-     <!-- NAV -->
-     <nav class="hero-nav" aria-label="Menu principale"> 
-       <a href="index.html" class="brand" aria-label="Vai alla Home"> <!-- logo -->
-         <img src="assets/img/logo2.png" alt="Logo AT" class="brand__logo" />
-       </a>
-
-       <ul class="social-links" aria-label="Social links"> <!-- Link Social -->
-         <li>
-           <a href="https://github.com/AlessandraTrapasso095/portfolio-alessandra-trapasso.git" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-             <i class="fa-brands fa-github"></i> <!-- "fa-brands" riferito ad Awesome Font-->
-             <span>GitHub</span>
-            </a>
-         </li>
-
-         <li>
-           <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-             <i class="fa-brands fa-linkedin-in"></i> <!-- "fa-brands" riferito ad Awesome Font-->
-             <span>LinkedIn</span>
-           </a>
-         </li>
-
-         <li>
-           <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-             <i class="fa-brands fa-instagram"></i> <!-- "fa-brands" riferito ad Awesome Font-->
-             <span>Instagram</span>
-           </a>
-         </li>
-       </ul>
-
-       <div class="menu-bar"> <!-- barra menu desktop -->
-         <ul class="nav-menu">
-           <li><a href="#home">Home</a></li>
-           <li><a href="aboutme/index.html" target="_blank" rel="noopener noreferrer">Chi Sono</a></li>
-           <li><a href="index.html#skills">Skills</a></li>
-           <li><a href="index.html#progetti">Progetti</a></li>
-           <li><a href="cv/index.html" target="_blank" rel="noopener noreferrer">CV</a></li>
-           <li><a href="contattami/index.html" target="_blank" rel="noopener noreferrer">Contattami</a></li>
-         </ul>
-
-         <form class="nav-search nav-search--desktop" role="search"> <!-- barra di ricerca finta senza JS-->
-           <input type="search" placeholder="Cerca..." />
-         </form>
-       </div>
-
-       <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true"/>  <!-- checkbox per menu Hamburger -->
-         <label for="nav-toggle" class="nav-hamburger" aria-label="Apri o chiudi il menu">
-           <span></span> <!-- per creare le tre linee -->
-           <span></span>
-           <span></span>
-          </label>
-
-         <label for="nav-toggle" class="nav-overlay" aria-hidden="true"></label>
-         <aside class="nav-drawer" aria-label="Menu mobile"> <!-- Menu mobile a destra -->
-           <div class="nav-drawer__top">
-              <span class="nav-drawer__title">Menu</span>
-            </div>
-
-            <ul class="nav-drawer__menu"> <!-- Menu mobile -->
-              <li><a href="#home">Home</a></li>
-             <li><a href="aboutme/index.html" target="_blank" rel="noopener noreferrer">Chi Sono</a></li>
-             <li><a href="index.html#skills">Skills</a></li>
-             <li><a href="index.html#progetti">Progetti</a></li>
-             <li><a href="cv/index.html" target="_blank" rel="noopener noreferrer">CV</a></li>
-             <li><a href="contattami/index.html" target="_blank" rel="noopener noreferrer">Contattami</a></li>
-            </ul>
-
-            <form class="nav-drawer__search" role="search"> <!-- Senza JS, barra ricerca menu mobile -->
-             <input type="search" placeholder="Cerca..." />
-            </form>
-         </aside>
-     </nav>
-   </header>
+   <header class="site-header" aria-label="Header principale" data-site-header></header>
 
     <!-- MAIN -->
     <main>
@@ -120,12 +48,15 @@
            </h1>
 
            <p class="hero-subtitle">
-             studio web development e costruisco progetti pratici, un passo alla volta.
-             Sto seguendo un percorso di formazione come Full Stack Web Developer, con particolare attenzione a HTML, CSS e layout responsive.
+             Junior Full Stack Web Developer in formazione. Trasformo idee in interfacce
+             pulite, responsive e orientate all'utente, con attenzione a struttura del codice,
+             performance e dettagli. Integro strumenti AI nel workflow per accelerare analisi
+             requisiti, sviluppo e testing, mantenendo quality check continuo e controllo del
+             risultato finale.
                   <br> <strong>Se cerchi una figura junior motivata, scrivimi: rispondo volentieri.</strong> 
            </p>
 
-           <a class="hero-cta" href="contattami/index.html" target="_blank" rel="noopener noreferrer">
+           <a class="hero-cta" href="contattami/index.html">
              Contattami <!-- bottone -->
            </a>
          </div>
@@ -223,40 +154,107 @@
        <div class="skills__card">
          <h2 class="skills__title">Skills</h2>
            <p class="skills__text">
-           Sto costruendo solide basi nel web development, con particolare attenzione
-           alla struttura del codice, ai layout responsive e alla cura dei dettagli.
+           Competenze tecniche in crescita continua, con focus su sviluppo web moderno,
+           AI applicata al workflow e progettazione UI essenziale.
            </p>
 
-           <div class="skills__grid">
-             <div class="skills__item">
-               <h3>HTML5</h3>
-                 <p>Struttura semantica, accessibilità e organizzazione dei contenuti.</p>
-              </div>
-
-             <div class="skills__item">
-               <h3>CSS3</h3>
-                 <p>Stili moderni, animazioni leggere e gestione delle spaziature.</p>
+           <div class="skills__layout">
+             <article class="skills-panel" aria-label="Competenze sviluppo">
+               <h3 class="skills-panel__title">Sviluppo</h3>
+               <div class="skills-panel__list">
+                 <div class="skills__item">
+                   <h3>JavaScript</h3>
+                   <p>Sviluppo frontend dinamico e gestione logica lato client.</p>
+                 </div>
+                 <div class="skills__item">
+                   <h3>Java</h3>
+                   <p>Basi solide OOP e struttura di applicazioni modulari.</p>
+                 </div>
+                 <div class="skills__item">
+                   <h3>TypeScript</h3>
+                   <p>Tipizzazione, mantenibilita e scalabilita del codice.</p>
+                 </div>
+                 <div class="skills__item">
+                   <h3>React</h3>
+                   <p>Creazione di componenti riusabili per interfacce moderne.</p>
+                 </div>
+                 <div class="skills__item">
+                   <h3>Angular</h3>
+                   <p>Struttura enterprise con componenti, servizi e routing.</p>
+                 </div>
+                 <div class="skills__item">
+                   <h3>Vue.js</h3>
+                   <p>Interfacce leggere e progressive con approccio reattivo.</p>
+                 </div>
+                 <div class="skills__item">
+                   <h3>Python</h3>
+                   <p>Script e automazioni per task tecnici e operativi.</p>
+                 </div>
+                 <div class="skills__item">
+                   <h3>PHP e MySQL</h3>
+                   <p>Backend web con gestione dati e query relazionali.</p>
+                 </div>
+                 <div class="skills__item">
+                   <h3>Node.js</h3>
+                   <p>API e toolchain JavaScript lato server.</p>
+                 </div>
+                 <div class="skills__item">
+                   <h3>WordPress</h3>
+                   <p>Siti gestibili, personalizzazioni tema e contenuti.</p>
+                 </div>
                </div>
+             </article>
 
-             <div class="skills__item">
-                <h3>Flexbox</h3>
-                 <p>Allineamento e distribuzione degli elementi nei layout.</p>
-              </div>
+             <article class="skills-panel" aria-label="Competenze intelligenza artificiale">
+               <h3 class="skills-panel__title">Intelligenza Artificiale</h3>
+               <div class="skills-panel__list">
+                 <div class="skills__item">
+                   <h3>Agenti AI</h3>
+                   <p>Uso operativo di agenti per task ripetitivi e produttivita.</p>
+                 </div>
+                 <div class="skills__item">
+                   <h3>Agenti AI per lo sviluppo</h3>
+                   <p>Supporto a refactor, debugging e accelerazione dei workflow.</p>
+                 </div>
+                 <div class="skills__item">
+                   <h3>AI e Prompt Engineering</h3>
+                   <p>Prompt strutturati per ottenere output tecnici affidabili.</p>
+                 </div>
+                 <div class="skills__item">
+                   <h3>Codex</h3>
+                   <p>Uso in flussi pratici per implementazione e revisione codice.</p>
+                 </div>
+                 <div class="skills__item">
+                   <h3>Lovable</h3>
+                   <p>Prototipazione rapida UI e test di idee prodotto.</p>
+                 </div>
+                 <div class="skills__item">
+                   <h3>Wix</h3>
+                   <p>Creazione e gestione di siti per vetrine e presenza online.</p>
+                 </div>
+                 <div class="skills__item">
+                   <h3>Automazioni con AI</h3>
+                   <p>Workflow automatizzati per task ripetitivi e operazioni tecniche.</p>
+                 </div>
+                 <div class="skills__item">
+                   <h3>Testing assistito</h3>
+                   <p>Supporto AI per test, verifica output e individuazione regressioni.</p>
+                 </div>
+                 <div class="skills__item">
+                   <h3>Analisi requisiti</h3>
+                   <p>Definizione funzionalita e casi d'uso con supporto AI.</p>
+                 </div>
+                 <div class="skills__item">
+                   <h3>Quality check</h3>
+                   <p>Valutazione critica delle risposte AI prima della consegna.</p>
+                 </div>
+               </div>
+             </article>
+           </div>
 
-             <div class="skills__item">
-               <h3>CSS Grid</h3>
-                 <p>Costruzione di layout complessi e responsive (livello base).</p>
-              </div>
-
-             <div class="skills__item">
-               <h3>Git & GitHub</h3>
-                 <p>Versionamento del codice e pubblicazione dei progetti.</p>
-              </div>
-
-             <div class="skills__item">
-               <h3>Responsive Design</h3>
-                 <p>Adattamento fluido su mobile, tablet e desktop.</p>
-              </div>
+           <div class="skills-figma" aria-label="Competenze Figma">
+             <h3>Figma (livello base)</h3>
+             <p>Creazione wireframe semplici, organizzazione layout e handoff base design-to-code.</p>
            </div>
         </div> 
       </div>
@@ -267,140 +265,31 @@
        <h2 class="projects-section__title">Progetti</h2>
     
        <p class="projects-section__subtitle">
-         Sto costruendo il mio portfolio: qui inserirò demo, repository GitHub e i case study dei miei lavori.
+         Una selezione dei progetti che ho gia sviluppato e che continuo a migliorare.
        </p>
 
-       <div class="projects-grid">
-         <article class="project-card">
-           <div class="project-card__top">
-             <span class="project-card__tag">In arrivo</span>
-             <span class="project-card__num">01</span>
-           </div>
+       <div class="projects-grid" aria-live="polite"></div>
 
-           <h3 class="project-card__title">Esempio Progetto 1</h3>
-            <p class="project-card__text">
-             Layout responsive, menu sticky mobile, Open Graph e struttura multi-pagina.
-           </p>
-
-           <div class="project-card__actions">
-               <a class="project-card__btn project-card__btn--disabled" href="#" aria-disabled="true">
-               Demo
-              </a>
-               <a class="project-card__btn project-card__btn--disabled" href="#" aria-disabled="true">
-               GitHub
-              </a>
-           </div>
-         </article>
-
-         <article class="project-card">
-           <div class="project-card__top">
-             <span class="project-card__tag">In arrivo</span>
-             <span class="project-card__num">02</span>
-           </div>
-
-           <h3 class="project-card__title">Esempio Progetto 2</h3>
-           <p class="project-card__text">
-            CV in HTML con sezioni chiare, tipografia pulita e struttura semantica.
-           </p>
-
-           <div class="project-card__actions">
-               <a class="project-card__btn project-card__btn--disabled" href="#" aria-disabled="true">
-               Demo
-              </a>
-               <a class="project-card__btn project-card__btn--disabled" href="#" aria-disabled="true">
-               GitHub
-             </a>
-           </div>
-         </article>
-
-         <article class="project-card">
-           <div class="project-card__top">
-             <span class="project-card__tag">In arrivo</span>
-             <span class="project-card__num">03</span>
-            </div>
-
-            <h3 class="project-card__title">Esempio Progetto 3</h3>
-            <p class="project-card__text">
-             Form accessibile con validazione HTML e struttura chiara.
-            </p>
-
-           <div class="project-card__actions">
-             <a class="project-card__btn project-card__btn--disabled" href="#" aria-disabled="true">
-              Demo
-             </a>
-             <a class="project-card__btn project-card__btn--disabled" href="#" aria-disabled="true">
-              GitHub
-             </a>
-           </div>
-         </article>
-
-         <article class="project-card">
-           <div class="project-card__top">
-             <span class="project-card__tag">In arrivo</span>
-             <span class="project-card__num">04</span>
-           </div>
-
-           <h3 class="project-card__title">Esempio Progetto 4</h3>
-           <p class="project-card__text">
-             Pulsanti, card, hover effects e animazioni leggere per migliorare l’esperienza utente.
-            </p>
-
-           <div class="project-card__actions">
-             <a class="project-card__btn project-card__btn--disabled" href="#" aria-disabled="true">
-              Demo
-             </a>
-             <a class="project-card__btn project-card__btn--disabled" href="#" aria-disabled="true">
-              GitHub
-             </a>
-           </div>
-         </article>
+       <div class="projects-more">
+         <p class="projects-more__text">Vedi altri progetti su</p>
+         <a class="projects-more__btn" href="https://github.com/AlessandraTrapasso095" aria-label="Apri GitHub">
+           <i class="fa-brands fa-github" aria-hidden="true"></i>
+           GitHub
+         </a>
        </div>
      </div>
      </section>
    </main>
 
     <!-- FOOTER -->
-   <footer class="site-footer" aria-label="Footer">
-    <div class="site-footer__inner">
-       <div class="site-footer__card">
-         <h2 class="site-footer__title">Restiamo in contatto</h2>
-           <p class="site-footer__text">
-           Se cerchi una Junior Web Developer motivata e attenta ai dettagli,
-           scrivimi o contattami sui miei profili social.
-         </p>
-
-           <div class="contact-form__actions">
-             <a class="contact-form__btn" href="contattami/index.html" target="_blank" rel="noopener noreferrer">
-               Contattami
-             </a>
-           </div>
-              
-       <ul class="site-footer__social" aria-label="Social links">
-           <li>
-             <a href="https://github.com/AlessandraTrapasso095/portfolio-alessandra-trapasso.git" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-               <i class="fa-brands fa-github"></i>
-              </a>
-           </li>
-
-           <li>
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <i class="fa-brands fa-linkedin-in"></i>
-             </a>
-           </li>
-
-           <li>
-             <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-               <i class="fa-brands fa-instagram"></i>
-              </a>
-           </li>
-         </ul>
-      <p class="site-footer__copy">
-        © 2026 Alessandra Trapasso — Junior Web Developer
-      </p>
-    </div>
-  </div>
- </footer>
+   <footer class="site-footer" aria-label="Footer" data-site-footer></footer>
+   <script defer src="assets/js/projects-data.js"></script>
+   <script defer src="assets/js/site-config.js"></script>
+   <script defer src="assets/js/site-shell.js"></script>
+   <script defer src="assets/js/projects-render.js"></script>
+   <script defer src="assets/js/site-search.js"></script>
+   <script defer src="assets/js/lazy-media.js"></script>
+   <script defer src="assets/js/lazy-sections.js"></script>
+   <script defer src="assets/js/contact-popup.js"></script>
 </body>
 </html>
-
-

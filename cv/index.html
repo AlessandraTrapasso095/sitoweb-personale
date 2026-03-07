@@ -15,7 +15,7 @@
     <meta property="og:description" content="Portfolio personale: competenze, CV e contatti." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="it_IT" />
-    <meta property="og:image" content="assets/img/og-cover.jpg" /> <!-- Immagine copertina -->
+    <meta property="og:image" content="../assets/img/og-cover.jpg" /> <!-- Immagine copertina -->
 
     <link rel="icon" href="../assets/icons/favicon.ico" /> <!-- Favicon -->
 
@@ -33,82 +33,9 @@
   </head>
    
   <!-- BODY -->
-  <body id="home" class="page-cv">
+  <body id="home" class="page-cv" data-base-path=".." data-page="cv">
    <!-- HEADER -->
-   <header class="site-header" aria-label="Header principale">
-     <!-- NAV -->
-     <nav class="hero-nav" aria-label="Menu principale"> 
-       <a href="../index.html" class="brand" aria-label="Vai alla Home"> <!-- link logo -->
-         <img src="../assets/img/logo2.png" alt="Logo AT" class="brand__logo" /> <!-- logo -->
-       </a>
-
-       <ul class="social-links" aria-label="Social links"> <!-- Social Links -->
-         <li>
-           <a href="https://github.com/AlessandraTrapasso095/portfolio-alessandra-trapasso.git" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-             <i class="fa-brands fa-github"></i> <!-- riferito ad Awesome Font-->
-             <span>GitHub</span>
-            </a>
-         </li>
-
-         <li>
-           <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-             <i class="fa-brands fa-linkedin-in"></i> <!-- riferito ad Awesome Font-->
-             <span>LinkedIn</span>
-           </a>
-         </li>
-
-         <li>
-           <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-             <i class="fa-brands fa-instagram"></i> <!-- riferito ad Awesome Font-->
-             <span>Instagram</span>
-           </a>
-         </li>
-       </ul>
-
-       <div class="menu-bar"> <!-- barra menu desktop -->
-         <ul class="nav-menu">
-           <li><a href="../index.html">Home</a></li>
-             <li><a href="../aboutme/index.html" target="_blank" rel="noopener noreferrer">Chi Sono</a></li>
-             <li><a href="../index.html#skills" target="_blank" rel="noopener noreferrer">Skills</a></li>
-             <li><a href="../index.html#progetti" target="_blank" rel="noopener noreferrer">Progetti</a></li>
-             <li><a href="../cv/index.html">CV</a></li>
-             <li><a href="../contattami/index.html" target="_blank" rel="noopener noreferrer">Contattami</a></li>
-         </ul>
-
-         <form class="nav-search nav-search--desktop" role="search"> <!-- barra di ricerca senza JS-->
-           <input type="search" placeholder="Cerca..." />
-         </form>
-       </div>
-
-       <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true"/> <!-- checkbox per menu hamburger mobile -->
-         <label for="nav-toggle" class="nav-hamburger" aria-label="Apri o chiudi il menu">
-           <span></span> <!-- tre linee hamburger -->
-           <span></span>
-           <span></span>
-          </label>
-
-         <label for="nav-toggle" class="nav-overlay" aria-hidden="true"></label>
-         <aside class="nav-drawer" aria-label="Menu mobile">
-             <div class="nav-drawer__top">
-               <span class="nav-drawer__title">Menu</span>
-             </div>
-
-           <ul class="nav-drawer__menu"> <!-- link socials per menu hamburger -->
-             <li><a href="../index.html">Home</a></li>
-             <li><a href="../aboutme/index.html" target="_blank" rel="noopener noreferrer">Chi Sono</a></li>
-             <li><a href="../index.html#skills" target="_blank" rel="noopener noreferrer">Skills</a></li>
-             <li><a href="../index.html#progetti" target="_blank" rel="noopener noreferrer">Progetti</a></li>
-             <li><a href="../cv/index.html">CV</a></li>
-             <li><a href="../contattami/index.html" target="_blank" rel="noopener noreferrer">Contattami</a></li>
-           </ul>
-
-           <form class="nav-drawer__search" role="search"> <!-- barra ricerca senza JS per hamburger -->
-             <input type="search" placeholder="Cerca..." />
-           </form>
-         </aside>
-        <!-- </input> chiuso sopra -->
-      </nav>
-    </header>
+   <header class="site-header" aria-label="Header principale" data-site-header></header>
 
    <!-- MAIN -->
    <main>
@@ -126,9 +53,10 @@
              <section class="u-card" aria-label="Profilo"> <!-- sezione profilo -->
                <h2 class="u-card__title">Profilo</h2>
                <p class="u-card__text">
-               Junior Full Stack Web Developer in formazione. Mi piace trasformare idee in interfacce pulite e responsive,
-               con attenzione alla struttura del codice e ai dettagli. Il mio background in lingue e didattica mi ha dato
-               metodo, comunicazione chiara e capacità di lavorare per obiettivi.
+               Junior Full Stack Web Developer in formazione. Trasformo idee in interfacce pulite, responsive e orientate
+               all'utente, con attenzione a struttura del codice, performance e dettagli. Integro strumenti AI nel workflow
+               per accelerare analisi requisiti, sviluppo e testing, mantenendo quality check continuo e controllo del
+               risultato finale.
                </p>
              </section>
 
@@ -136,19 +64,19 @@
                <h2 class="u-card__title">Esperienza</h2>
                  <div class="cv-item">
                  <div class="cv-item__top">
-                   <h3 class="cv-item__role">Insegnamento presso istituti scolastici</h3>
-                   <span class="cv-item__date">dal 2021</span>
+                   <h3 class="cv-item__role">Collaborazioni e Progetti Personali</h3>
+                   <span class="cv-item__date">2024 - oggi</span>
                   </div>
 
                  <p class="cv-item__text">
-                   Attività didattica in contesti scolastici con focus su comunicazione, organizzazione del lavoro,
-                   gestione del tempo e capacità di spiegare concetti in modo semplice e chiaro.
+                   Sviluppo di progetti web personali e micro-collaborazioni su interfacce, refactor frontend,
+                   integrazione strumenti AI e miglioramento UX.
                  </p>
 
                  <ul class="cv-item__list" aria-label="Attività principali">
-                   <li>Gestione di classi e lavoro per obiettivi.</li>
-                   <li>Programmazione didattica e preparazione materiali.</li>
-                   <li>Comunicazione efficace e collaborazione con team.</li>
+                   <li>Realizzazione di siti e componenti responsive con HTML, CSS e JavaScript.</li>
+                   <li>Supporto su progetti frontend con Angular, Vue e React (livello operativo).</li>
+                   <li>Uso di AI tools e agenti AI per sviluppo, analisi requisiti e quality check.</li>
                  </ul>
                </div>
              </section>
@@ -156,14 +84,27 @@
              <section class="u-card" aria-label="Competenze"> <!-- sezione competenze -->
                <h2 class="u-card__title">Competenze</h2>
                <div class="u-badges" aria-label="Lista competenze">
-                 <span class="u-badge">HTML5</span>
-                 <span class="u-badge">CSS3</span>
-                 <span class="u-badge">Responsive Design</span>
-                 <span class="u-badge">Flexbox</span>
-                 <span class="u-badge">CSS Grid</span>
-                 <span class="u-badge">Bootstrap</span>
-                 <span class="u-badge">Sass</span>
-                 <span class="u-badge">Git & GitHub</span>
+                 <span class="u-badge">JavaScript</span>
+                 <span class="u-badge">Java</span>
+                 <span class="u-badge">TypeScript</span>
+                 <span class="u-badge">React</span>
+                 <span class="u-badge">Angular</span>
+                 <span class="u-badge">Vue.js</span>
+                 <span class="u-badge">Python</span>
+                 <span class="u-badge">PHP e MySQL</span>
+                 <span class="u-badge">Node.js</span>
+                 <span class="u-badge">WordPress</span>
+                 <span class="u-badge">Agenti AI</span>
+                 <span class="u-badge">Agenti AI per lo sviluppo</span>
+                 <span class="u-badge">AI e Prompt Engineering</span>
+                 <span class="u-badge">Codex</span>
+                 <span class="u-badge">Lovable</span>
+                 <span class="u-badge">Wix</span>
+                 <span class="u-badge">Automazioni con AI</span>
+                 <span class="u-badge">Testing assistito</span>
+                 <span class="u-badge">Analisi requisiti</span>
+                 <span class="u-badge">Quality check</span>
+                 <span class="u-badge">Figma (base)</span>
                </div>
 
                <p class="u-card__small">
@@ -188,20 +129,6 @@
              <section class="u-card u-card--side" aria-label="Formazione"> <!-- sezione formazione -->
                <h2 class="u-card__title">Formazione</h2>
                <div class="cv-timeline" aria-label="Timeline formazione">
-               <div class="cv-timeline__item">
-                  <span class="cv-timeline__year">2014</span>
-                   <p class="cv-timeline__text">
-                     Diploma – Liceo Classico P. Galluppi (Catanzaro)
-                    </p>
-                </div>
-
-               <div class="cv-timeline__item">
-                 <span class="cv-timeline__year">2019</span>
-                   <p class="cv-timeline__text">
-                     Laurea – Lingue e Culture Moderne
-                    </p>
-                </div>
-
                 <div class="cv-timeline__item">
                  <span class="cv-timeline__year">2021</span>
                    <p class="cv-timeline__text">
@@ -212,7 +139,7 @@
                 <div class="cv-timeline__item">
                   <span class="cv-timeline__year">2025</span>
                   <p class="cv-timeline__text">
-                    Full Stack Web Development
+                    Full Stack Web Development & AI
                   </p>
                 </div>
               </div>
@@ -222,7 +149,6 @@
                <h2 class="u-card__title">Certificazioni</h2>
 
                <ul class="u-list" aria-label="Elenco certificazioni">
-               <li>CLIL (2024)</li>
                <li>Certificazione Inglese C2 (2024)</li>
                <li>Certificato in Gaming Developer (2025)</li>
                <li>Certificato Digital Minds (2025)</li>
@@ -245,48 +171,13 @@
      </main>
   
 <!-- FOOTER -->
-<footer class="site-footer" aria-label="Footer">
-  <div class="site-footer__inner">
-    <div class="site-footer__card">
-      <h2 class="site-footer__title">Restiamo in contatto</h2>
-
-      <p class="site-footer__text">
-        Se cerchi una Junior Web Developer motivata e attenta ai dettagli,
-        scrivimi o contattami sui miei profili social.
-      </p>
-
-      <div class="contact-form__actions">
-       <a class="contact-form__btn" href="../contattami/index.html" target="_blank" rel="noopener noreferrer">
-       Contattami
-       </a>
-     </div>
-              
-      <ul class="site-footer__social" aria-label="Social links">
-        <li>
-          <a href="https://github.com/AlessandraTrapasso095/portfolio-alessandra-trapasso.git" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <i class="fa-brands fa-github"></i>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-        </li>
-      </ul>
-
-      <p class="site-footer__copy">
-        © 2026 Alessandra Trapasso — Junior Web Developer
-      </p>
-    </div>
-  </div>
-</footer>
+<footer class="site-footer" aria-label="Footer" data-site-footer></footer>
+<script defer src="../assets/js/projects-data.js"></script>
+<script defer src="../assets/js/site-config.js"></script>
+<script defer src="../assets/js/site-shell.js"></script>
+<script defer src="../assets/js/site-search.js"></script>
+<script defer src="../assets/js/lazy-media.js"></script>
+<script defer src="../assets/js/lazy-sections.js"></script>
+ <script defer src="../assets/js/contact-popup.js"></script>
   </body>
 </html>
-

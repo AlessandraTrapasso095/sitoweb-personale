@@ -378,6 +378,35 @@ main {
   transform: translateY(-2px);
 }
 
+.site-footer__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 34px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 0.35px;
+  color: #ffffff;
+  text-decoration: none;
+  background: linear-gradient(135deg, #3955ff, #ff4fae);
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+  transform: translateY(0);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.site-footer__cta:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.35);
+  filter: saturate(1.05);
+}
+
+.site-footer__cta:active {
+  transform: translateY(-1px);
+}
+
 
 .site-footer__social {
   display: flex;

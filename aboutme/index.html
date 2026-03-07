@@ -15,7 +15,7 @@
     <meta property="og:description" content="Portfolio personale: competenze, CV e contatti." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="it_IT" />
-    <meta property="og:image" content="assets/img/og-cover.jpg" /> <!-- Immagine copertina -->
+    <meta property="og:image" content="../assets/img/og-cover.jpg" /> <!-- Immagine copertina -->
 
     <link rel="icon" href="../assets/icons/favicon.ico" /> <!-- Favicon -->
 
@@ -33,83 +33,9 @@
   </head>
    
   <!-- BODY -->
- <body id="home" class="page-chisono">
+ <body id="home" class="page-chisono" data-base-path=".." data-page="about">
    <!-- HEADER -->
-   <header class="site-header" aria-label="Header principale"> 
-     <!-- NAV -->
-     <nav class="hero-nav" aria-label="Menu principale"> 
-       <a href="../index.html" class="brand" aria-label="Vai alla Home"> <!-- link logo -->
-         <img src="../assets/img/logo2.png" alt="Logo AT" class="brand__logo" /> <!-- logo -->
-       </a>
-
-       <ul class="social-links" aria-label="Social links"> <!-- Social links -->
-         <li>
-           <a href="https://github.com/AlessandraTrapasso095/portfolio-alessandra-trapasso.git" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-             <i class="fa-brands fa-github"></i> <!-- "fa-brands" riferito ad Awesome Font-->
-             <span>GitHub</span>
-           </a>
-         </li>
-
-         <li>
-           <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-             <i class="fa-brands fa-linkedin-in"></i> <!-- "fa-brands" riferito ad Awesome Font-->
-             <span>LinkedIn</span>
-            </a>
-          </li>
-
-         <li>
-           <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-             <i class="fa-brands fa-instagram"></i> <!-- "fa-brands" riferito ad Awesome Font-->
-             <span>Instagram</span>
-           </a>
-         </li>
-       </ul>
-
-       <div class="menu-bar"> <!-- barra menu desktop -->
-         <ul class="nav-menu">
-           <li><a href="../index.html" target="_blank" rel="noopener noreferrer">Home</a></li>
-           <li><a href="index.html">Chi Sono</a></li>
-           <li><a href="../index.html#skills" target="_blank" rel="noopener noreferrer">Skills</a></li>
-           <li><a href="../index.html#progetti" target="_blank" rel="noopener noreferrer">Progetti</a></li>
-           <li><a href="../cv/index.html" target="_blank" rel="noopener noreferrer">CV</a></li>
-           <li><a href="../contattami/index.html" target="_blank" rel="noopener noreferrer">Contattami</a></li>
-         </ul>
-
-         <form class="nav-search nav-search--desktop" role="search"> <!-- barra di ricerca senza JS-->
-           <input type="search" placeholder="Cerca..." />
-          </form>
-       </div>
-       
-       <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true"/> <!-- checkbox per menu Hamburger mobile-->
-         <label for="nav-toggle" class="nav-hamburger" aria-label="Apri o chiudi il menu">
-           <span></span> <!-- le tre linee hamburger-->
-           <span></span>
-           <span></span>
-          </label>
-
-         <label for="nav-toggle" class="nav-overlay" aria-hidden="true"></label>
-
-         <aside class="nav-drawer" aria-label="Menu mobile"> <!-- barra laterale hamburger menu-->
-           <div class="nav-drawer__top">
-             <span class="nav-drawer__title">Menu</span>
-            </div>
-
-           <ul class="nav-drawer__menu"> <!-- link menu hamburger-->
-             <li><a href="../index.html" target="_blank" rel="noopener noreferrer">Home</a></li>
-             <li><a href="index.html">Chi Sono</a></li>
-             <li><a href="../index.html#skills" target="_blank" rel="noopener noreferrer">Skills</a></li>
-             <li><a href="../index.html#progetti" target="_blank" rel="noopener noreferrer">Progetti</a></li>
-             <li><a href="../cv/index.html" target="_blank" rel="noopener noreferrer">CV</a></li>
-             <li><a href="../contattami/index.html" target="_blank" rel="noopener noreferrer">Contattami</a></li>
-           </ul>
-
-           <form class="nav-drawer__search" role="search"> <!-- barra di ricerca senza JS per hamburger-->
-             <input type="search" placeholder="Cerca..." />
-           </form>
-         </aside>
-         <!-- <Input> chiuso sopra-->
-     </nav>
-    </header>
+   <header class="site-header" aria-label="Header principale" data-site-header></header>
 
    <!-- MAIN-->
    <main>
@@ -162,7 +88,7 @@
        <!-- </h1> chiuso sopra-->
 
        <div class="chisono-cta"> <!-- Bottone per rimando a CV-->
-          <a class="hero-cta" href="../cv/index.html" target="_blank" rel="noopener noreferrer">
+          <a class="hero-cta" href="../cv/index.html">
             Vai al CV
           </a>
         </div>
@@ -181,51 +107,14 @@
      </div>
    </main>
 
- </body>
-
  <!-- FOOTER -->
-    <footer class="site-footer" aria-label="Footer">
-  <div class="site-footer__inner">
-    <div class="site-footer__card">
-      <h2 class="site-footer__title">Restiamo in contatto</h2>
-
-      <p class="site-footer__text">
-        Se cerchi una Junior Web Developer motivata e attenta ai dettagli,
-        scrivimi o contattami sui miei profili social.
-      </p>
-
-      <div class="contact-form__actions">
-       <a class="contact-form__btn" href="../contattami/index.html" target="_blank" rel="noopener noreferrer">
-       Contattami
-       </a>
-     </div>
-
-      <ul class="site-footer__social" aria-label="Social links">
-        <li>
-          <a href="https://github.com/AlessandraTrapasso095/portfolio-alessandra-trapasso.git" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <i class="fa-brands fa-github"></i>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-        </li>
-      </ul>
-
-      <p class="site-footer__copy">
-        © 2026 Alessandra Trapasso — Junior Web Developer
-      </p>
-    </div>
-  </div>
- </footer>
+ <footer class="site-footer" aria-label="Footer" data-site-footer></footer>
+ <script defer src="../assets/js/projects-data.js"></script>
+ <script defer src="../assets/js/site-config.js"></script>
+ <script defer src="../assets/js/site-shell.js"></script>
+ <script defer src="../assets/js/site-search.js"></script>
+ <script defer src="../assets/js/lazy-media.js"></script>
+ <script defer src="../assets/js/lazy-sections.js"></script>
+ <script defer src="../assets/js/contact-popup.js"></script>
+ </body>
 </html>
-
-
