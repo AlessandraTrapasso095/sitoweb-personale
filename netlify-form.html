@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netlify Form Fallback</title>
+  </head>
+  <body>
+    <!-- Static fallback form so Netlify always detects "contact" -->
+    <form name="contact" method="POST" action="/" data-netlify="true" netlify netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact" />
+      <p style="display: none;">
+        <label>Non compilare: <input name="bot-field" /></label>
+      </p>
+      <label>Nome <input type="text" name="name" /></label>
+      <label>Email <input type="email" name="email" /></label>
+      <label>Oggetto <input type="text" name="subject" /></label>
+      <label>Messaggio <textarea name="message"></textarea></label>
+      <button type="submit">Invia</button>
+    </form>
+  </body>
+</html>

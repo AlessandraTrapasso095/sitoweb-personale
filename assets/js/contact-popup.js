@@ -30,7 +30,7 @@
     '<div class="contact-pop-overlay" data-close-popup></div>' +
     '<div class="contact-pop-panel" role="dialog" aria-modal="true" aria-label="Contattami">' +
     '<div class="contact-pop-head"><h3 class="contact-pop-title">Contattami</h3><button class="contact-pop-close" type="button" aria-label="Chiudi" data-close-popup>&times;</button></div>' +
-    '<form class="contact-pop-form" method="POST" action="/" data-netlify="true" name="contact" netlify-honeypot="bot-field">' +
+    '<form class="contact-pop-form" method="POST" action="/" data-netlify="true" netlify name="contact" netlify-honeypot="bot-field">' +
     '<input type="hidden" name="form-name" value="contact" />' +
     '<input type="hidden" name="_subject" value="Nuovo contatto dal portfolio" />' +
     '<p class="contact-pop-hp"><label>Non compilare <input name="bot-field" /></label></p>' +
