@@ -80,6 +80,19 @@
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     var submitButton = form.querySelector("button[type='submit']");
+    var host = window.location.hostname || "";
+    var isLocalHost =
+      host === "localhost" ||
+      host === "127.0.0.1" ||
+      host === "0.0.0.0" ||
+      host === "";
+
+    if (isLocalHost) {
+      note.textContent =
+        "Su localhost l'invio email non e attivo. Prova dal sito pubblicato su Netlify.";
+      return;
+    }
+
     submitButton.disabled = true;
     submitButton.textContent = "Invio in corso...";
     note.textContent = "Invio del messaggio in corso...";
