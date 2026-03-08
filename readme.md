@@ -17,5 +17,5 @@ Sito portfolio personale realizzato per il progetto Start2Impact.
 - Contattami
 
 🔗 GitHub: https://github.com/AlessandraTrapasso095/sitoweb.git
-🔗 Deploy: https://alessandra-trapasso-web-developer.netlify.app/
+🔗 Deploy: https://alessandra-trapasso-webdev.netlify.app/
 

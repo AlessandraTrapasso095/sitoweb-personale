@@ -322,5 +322,13 @@
    <script defer src="assets/js/lazy-media.js"></script>
    <script defer src="assets/js/lazy-sections.js"></script>
    <script defer src="assets/js/contact-popup.js"></script>
+   <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+     <input type="hidden" name="form-name" value="contact" />
+     <input type="text" name="name" />
+     <input type="email" name="email" />
+     <input type="text" name="subject" />
+     <textarea name="message"></textarea>
+     <input name="bot-field" />
+   </form>
 </body>
 </html>
