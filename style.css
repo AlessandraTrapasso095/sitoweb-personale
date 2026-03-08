@@ -633,6 +633,13 @@ main > div:first-child {
   max-width: 640px;
 }
 
+.hero-availability {
+  margin: -6px 0 16px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2d2d2d;
+}
+
 /* MAIN: bottone “contattami” */
 .hero-cta {
   display: inline-flex;
@@ -1229,6 +1236,7 @@ main > div:first-child {
     width: 100%;
     margin-right: 0;
   }
+
 
   .why-me {
     padding: 44px 0;

@@ -695,6 +695,35 @@ main > div:first-child {
   opacity: 0.96;
 }
 
+.cv-download {
+  margin-top: 14px;
+}
+
+.cv-download--bottom {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+}
+
+.cv-download__btn {
+  height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+.cv-download__btn:disabled {
+  opacity: 0.72;
+}
+
 .u-section {
   padding: 70px 0 90px;
 }

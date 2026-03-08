@@ -19,6 +19,18 @@
   var cvUrl = basePath === "." ? "cv/index.html" : "../cv/index.html";
   var contactUrl = basePath === "." ? "contattami/index.html" : "../contattami/index.html";
 
+  var a11yStyleId = "site-a11y-style";
+  if (!document.getElementById(a11yStyleId)) {
+    var a11yStyle = document.createElement("style");
+    a11yStyle.id = a11yStyleId;
+    a11yStyle.textContent =
+      "a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #ff66c4;outline-offset:3px;border-radius:8px}" +
+      ".site-search-results a:focus-visible{outline:2px solid #5170ff;outline-offset:2px}" +
+      "@media (prefers-reduced-motion: reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}";
+    document.head.appendChild(a11yStyle);
+  }
+
+
   var headerTarget = document.querySelector("[data-site-header]");
   if (headerTarget) {
     headerTarget.innerHTML =
