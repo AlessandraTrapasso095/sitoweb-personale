@@ -666,6 +666,30 @@ main > div:first-child {
   background: rgb(255, 255, 255);
 }
 
+.contact-form__consent label {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.contact-form__consent input[type=checkbox] {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  margin-top: 2px;
+  padding: 0;
+  accent-color: #3854ee;
+}
+
+.contact-form__consent a {
+  color: #ffffff;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
 .contact-form__actions {
   display: flex;
   flex-direction: column;
