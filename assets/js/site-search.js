@@ -22,6 +22,8 @@
   var aboutUrl = basePath === "." ? "aboutme/index.html" : "../aboutme/index.html";
   var cvUrl = basePath === "." ? "cv/index.html" : "../cv/index.html";
   var contactUrl = basePath === "." ? "contattami/index.html" : "../contattami/index.html";
+  var privacyUrl = basePath === "." ? "privacy/index.html" : "../privacy/index.html";
+  var cookieUrl = basePath === "." ? "cookie/index.html" : "../cookie/index.html";
 
   var normalize = function (text) {
     return String(text || "")
@@ -50,6 +52,8 @@
   addEntry("Progetti", "sunnee urban ideas book finder tic tac toe github demo", homeUrl + "#progetti");
   addEntry("CV", "curriculum esperienza formazione certificazioni lingue", cvUrl);
   addEntry("Contattami", "contatti messaggio form popup", contactUrl);
+  addEntry("Privacy Policy", "privacy gdpr dati personali trattamento", privacyUrl);
+  addEntry("Cookie Policy", "cookie tecnici preferenze banner", cookieUrl);
 
   var projects = Array.isArray(window.PORTFOLIO_PROJECTS) ? window.PORTFOLIO_PROJECTS : [];
   projects.forEach(function (project) {
