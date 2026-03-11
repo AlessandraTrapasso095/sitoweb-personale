@@ -17,7 +17,7 @@
       ".contact-pop-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}" +
       ".contact-pop-form input,.contact-pop-form textarea{width:100%;border:1px solid rgba(255,255,255,.35);background:#fff;color:#111;border-radius:11px;padding:11px 12px;font-size:14px;outline:none}" +
       ".contact-pop-form textarea{min-height:120px;resize:vertical}" +
-      ".contact-pop-consent{display:flex;align-items:flex-start;gap:8px;font-size:12px;line-height:1.45}" +
+      ".contact-pop-consent{display:flex;align-items:flex-start;gap:8px;font-size:12px;line-height:1.45;padding:10px 12px;border:1px solid rgba(255,255,255,.28);border-radius:12px;background:rgba(255,255,255,.08)}" +
       ".contact-pop-consent input{width:16px;height:16px;min-width:16px;margin-top:2px;padding:0;border-radius:4px;accent-color:#3350dd}" +
       ".contact-pop-consent a{color:#fff;text-decoration:underline;font-weight:700}" +
       ".contact-pop-form button{border:none;cursor:pointer;height:48px;border-radius:999px;font-weight:900;color:#fff;background:linear-gradient(135deg,#3955ff,#ff4fae);border:2px solid rgba(255,255,255,.5)}" +
@@ -47,7 +47,7 @@
     "</div>" +
     '<input type="text" name="subject" placeholder="Oggetto" required />' +
     '<textarea name="message" placeholder="Scrivi qui il tuo messaggio..." required></textarea>' +
-    '<label class="contact-pop-consent"><input type="checkbox" name="privacy_consent" value="yes" required /><span>Acconsento al trattamento dei dati per essere ricontattato/a. Ho letto la <a href="' +
+    '<label class="contact-pop-consent"><input type="checkbox" name="privacy_consent" value="yes" required /><span><strong>Consenso privacy (obbligatorio):</strong> Acconsento al trattamento dei dati per essere ricontattato/a. Ho letto la <a href="' +
     privacyUrl +
     '" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</span></label>' +
     '<button type="submit">Invia messaggio</button>' +
