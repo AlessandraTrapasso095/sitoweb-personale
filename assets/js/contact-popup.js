@@ -30,7 +30,7 @@
     '<div class="contact-pop-overlay" data-close-popup></div>' +
     '<div class="contact-pop-panel" role="dialog" aria-modal="true" aria-label="Contattami">' +
     '<div class="contact-pop-head"><h3 class="contact-pop-title">Contattami</h3><button class="contact-pop-close" type="button" aria-label="Chiudi" data-close-popup>&times;</button></div>' +
-    '<form class="contact-pop-form" method="POST" action="/" data-netlify="true" netlify name="contact" netlify-honeypot="bot-field">' +
+    '<form class="contact-pop-form" method="POST" action="/?contact=sent" data-netlify="true" netlify name="contact" netlify-honeypot="bot-field">' +
     '<input type="hidden" name="form-name" value="contact" />' +
     '<input type="hidden" name="_subject" value="Nuovo contatto dal portfolio" />' +
     '<p class="contact-pop-hp"><label>Non compilare <input name="bot-field" /></label></p>' +
@@ -46,7 +46,6 @@
     "</div>";
   document.body.appendChild(wrapper);
 
-  var panel = wrapper.querySelector(".contact-pop-panel");
   var form = wrapper.querySelector(".contact-pop-form");
   var note = wrapper.querySelector(".contact-pop-note");
 
@@ -77,8 +76,28 @@
     openPopup();
   });
 
+  var showSentToast = function () {
+    var toast = document.createElement("div");
+    toast.textContent = "Messaggio inviato correttamente.";
+    toast.style.cssText =
+      "position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10060;background:#141a2b;color:#fff;" +
+      "border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:10px 16px;font-size:13px;font-weight:700;" +
+      "box-shadow:0 12px 28px rgba(0,0,0,.3);";
+    document.body.appendChild(toast);
+    setTimeout(function () {
+      toast.remove();
+    }, 3200);
+  };
+
+  var qs = new URLSearchParams(window.location.search);
+  if (qs.get("contact") === "sent") {
+    showSentToast();
+    qs.delete("contact");
+    var newUrl = window.location.pathname + (qs.toString() ? "?" + qs.toString() : "") + window.location.hash;
+    window.history.replaceState({}, document.title, newUrl);
+  }
+
   form.addEventListener("submit", function (event) {
-    event.preventDefault();
     var submitButton = form.querySelector("button[type='submit']");
     var host = window.location.hostname || "";
     var isLocalHost =
@@ -88,6 +107,7 @@
       host === "";
 
     if (isLocalHost) {
+      event.preventDefault();
       note.textContent =
         "Su localhost l'invio email non e attivo. Prova dal sito pubblicato su Netlify.";
       return;
@@ -95,24 +115,6 @@
 
     submitButton.disabled = true;
     submitButton.textContent = "Invio in corso...";
-    note.textContent = "Invio del messaggio in corso...";
-
-    var payload = new URLSearchParams(new FormData(form)).toString();
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: payload,
-    })
-      .then(function (response) {
-        if (!response.ok) throw new Error("Submit error");
-        note.textContent = "Messaggio inviato correttamente.";
-        submitButton.textContent = "Inviato";
-        form.reset();
-      })
-      .catch(function () {
-        note.textContent = "Su localhost il submit puo non essere disponibile. In deploy il form funziona.";
-        submitButton.disabled = false;
-        submitButton.textContent = "Invia messaggio";
-      });
+    note.textContent = "Invio in corso...";
   });
 })();
