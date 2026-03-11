@@ -7,7 +7,7 @@
   var config = window.SITE_CONFIG || {};
   var socialLinks = config.socialLinks || {};
   var githubUrl = socialLinks.github || "https://github.com/AlessandraTrapasso095";
-  var linkedinUrl = socialLinks.linkedin || "https://www.linkedin.com/";
+  var linkedinUrl = socialLinks.linkedin || "https://www.linkedin.com/in/alessandra-trapasso-72b798392/";
   var instagramUrl = socialLinks.instagram || "https://www.instagram.com/";
 
   var toPath = function (path) {
