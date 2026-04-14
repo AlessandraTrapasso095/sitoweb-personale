@@ -3,142 +3,49 @@
   if (!body) return;
 
   var basePath = body.dataset.basePath || ".";
-  var page = body.dataset.page || "home";
   var config = window.SITE_CONFIG || {};
   var socialLinks = config.socialLinks || {};
   var githubUrl = socialLinks.github || "https://github.com/AlessandraTrapasso095";
   var linkedinUrl = socialLinks.linkedin || "https://www.linkedin.com/in/alessandra-trapasso-72b798392/";
   var instagramUrl = socialLinks.instagram || "https://www.instagram.com/";
 
-  var toPath = function (path) {
+  function toPath(path) {
     return basePath === "." ? path : "../" + path;
-  };
-
-  var homeUrl = basePath === "." ? "index.html" : "../index.html";
-  var aboutUrl = basePath === "." ? "aboutme/index.html" : "../aboutme/index.html";
-  var cvUrl = basePath === "." ? "cv/index.html" : "../cv/index.html";
-  var contactUrl = basePath === "." ? "contattami/index.html" : "../contattami/index.html";
-  var privacyUrl = basePath === "." ? "privacy/index.html" : "../privacy/index.html";
-  var cookieUrl = basePath === "." ? "cookie/index.html" : "../cookie/index.html";
-
-  var a11yStyleId = "site-a11y-style";
-  if (!document.getElementById(a11yStyleId)) {
-    var a11yStyle = document.createElement("style");
-    a11yStyle.id = a11yStyleId;
-    a11yStyle.textContent =
-      "a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #ff66c4;outline-offset:3px;border-radius:8px}" +
-      ".site-search-results a:focus-visible{outline:2px solid #5170ff;outline-offset:2px}" +
-      ".site-footer__legal{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:8px 0 6px}" +
-      ".site-footer__legal-link{display:inline-flex;align-items:center;justify-content:center;height:36px;padding:0 14px;border-radius:999px;text-decoration:none;color:#fff;font-size:12px;font-weight:800;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24)}" +
-      ".site-footer__legal-link:hover{transform:translateY(-1px);opacity:.96}" +
-      ".cookie-banner{position:fixed;left:50%;bottom:16px;transform:translate(-50%,20px);width:min(940px,calc(100vw - 20px));background:linear-gradient(135deg,#1d2f7a,#8e2a65);color:#fff;border:1px solid rgba(255,255,255,.28);border-radius:14px;box-shadow:0 18px 38px rgba(0,0,0,.32);padding:14px 14px 12px;z-index:10080;opacity:0;pointer-events:none;transition:all .22s ease}" +
-      ".cookie-banner.is-visible{opacity:1;transform:translate(-50%,0);pointer-events:auto}" +
-      ".cookie-banner__inner{display:flex;gap:12px;align-items:flex-start;justify-content:space-between}" +
-      ".cookie-banner__text{margin:0;font-size:13px;line-height:1.55;max-width:760px}" +
-      ".cookie-banner__actions{display:flex;gap:8px;flex-wrap:wrap}" +
-      ".cookie-banner__btn,.cookie-banner__link{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.35);font-size:12px;font-weight:800;text-decoration:none}" +
-      ".cookie-banner__btn{background:#fff;color:#111;cursor:pointer}" +
-      ".cookie-banner__link{background:rgba(255,255,255,.12);color:#fff}" +
-      "@media (max-width:760px){.cookie-banner__inner{flex-direction:column}.cookie-banner__actions{width:100%}.cookie-banner__btn,.cookie-banner__link{flex:1}}" +
-      "@media (prefers-reduced-motion: reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}";
-    document.head.appendChild(a11yStyle);
   }
 
+  var homeUrl = basePath === "." ? "index.html#hero" : "../index.html#hero";
+  var whyUrl = basePath === "." ? "index.html#perche" : "../index.html#perche";
+  var processUrl = basePath === "." ? "index.html#come-lavoro" : "../index.html#come-lavoro";
+  var skillsUrl = basePath === "." ? "index.html#skills" : "../index.html#skills";
+  var projectsUrl = basePath === "." ? "index.html#progetti" : "../index.html#progetti";
+  var cvUrl = basePath === "." ? "index.html#curriculum" : "../index.html#curriculum";
+  var contactUrl = basePath === "." ? "index.html#contatti" : "../index.html#contatti";
+  var privacyUrl = basePath === "." ? "privacy/index.html" : "../privacy/index.html";
+  var cookieUrl = basePath === "." ? "cookie/index.html" : "../cookie/index.html";
 
   var headerTarget = document.querySelector("[data-site-header]");
   if (headerTarget) {
     headerTarget.innerHTML =
       '<nav class="hero-nav" aria-label="Menu principale">' +
-      '<a href="' +
-      homeUrl +
-      '" class="brand" aria-label="Vai alla Home">' +
-      '<img src="' +
-      toPath("assets/img/logo2.png") +
-      '" alt="Logo AT" class="brand__logo" />' +
+      '<a href="' + homeUrl + '" class="brand" aria-label="Vai alla Home">' +
+      '<img src="' + toPath("assets/img/logo2.png") + '" alt="Logo Alessandra Trapasso" class="brand__logo" />' +
       "</a>" +
-      '<ul class="social-links" aria-label="Social links">' +
-      '<li><a href="' +
-      githubUrl +
-      '" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i><span>GitHub</span></a></li>' +
-      '<li><a href="' +
-      linkedinUrl +
-      '" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i><span>LinkedIn</span></a></li>' +
-      '<li><a href="' +
-      instagramUrl +
-      '" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a></li>' +
-      "</ul>" +
       '<div class="menu-bar">' +
       '<ul class="nav-menu">' +
-      '<li><a href="' +
-      homeUrl +
-      '">Home</a></li>' +
-      '<li><a href="' +
-      aboutUrl +
-      '">Chi Sono</a></li>' +
-      '<li><a href="' +
-      homeUrl +
-      '#skills">Skills</a></li>' +
-      '<li><a href="' +
-      homeUrl +
-      '#progetti">Progetti</a></li>' +
-      '<li><a href="' +
-      cvUrl +
-      '">CV</a></li>' +
-      '<li><a href="' +
-      contactUrl +
-      '">Contattami</a></li>' +
+      '<li><a href="' + whyUrl + '">Perche</a></li>' +
+      '<li><a href="' + processUrl + '">Come lavoro</a></li>' +
+      '<li><a href="' + skillsUrl + '">Skills</a></li>' +
+      '<li><a href="' + projectsUrl + '">Progetti</a></li>' +
+      '<li><a href="' + cvUrl + '">Curriculum</a></li>' +
+      '<li><a href="' + contactUrl + '">Contatti</a></li>' +
       "</ul>" +
-      '<form class="nav-search nav-search--desktop" role="search">' +
-      '<input type="search" placeholder="Cerca..." aria-label="Cerca nel sito" autocomplete="off" />' +
-      "</form>" +
+      '<ul class="social-links" aria-label="Social links">' +
+      '<li><a href="' + githubUrl + '" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i><span>GitHub</span></a></li>' +
+      '<li><a href="' + linkedinUrl + '" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i><span>LinkedIn</span></a></li>' +
+      '<li><a href="' + instagramUrl + '" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a></li>' +
+      "</ul>" +
       "</div>" +
-      '<input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" />' +
-      '<label for="nav-toggle" class="nav-hamburger" aria-label="Apri o chiudi il menu"><span></span><span></span><span></span></label>' +
-      '<label for="nav-toggle" class="nav-overlay" aria-hidden="true"></label>' +
-      '<aside class="nav-drawer" aria-label="Menu mobile">' +
-      '<div class="nav-drawer__top"><span class="nav-drawer__title">Menu</span></div>' +
-      '<ul class="nav-drawer__menu">' +
-      '<li><a href="' +
-      homeUrl +
-      '">Home</a></li>' +
-      '<li><a href="' +
-      aboutUrl +
-      '">Chi Sono</a></li>' +
-      '<li><a href="' +
-      homeUrl +
-      '#skills">Skills</a></li>' +
-      '<li><a href="' +
-      homeUrl +
-      '#progetti">Progetti</a></li>' +
-      '<li><a href="' +
-      cvUrl +
-      '">CV</a></li>' +
-      '<li><a href="' +
-      contactUrl +
-      '">Contattami</a></li>' +
-      "</ul>" +
-      '<form class="nav-drawer__search" role="search">' +
-      '<input type="search" placeholder="Cerca..." aria-label="Cerca nel sito" autocomplete="off" />' +
-      "</form>" +
-      "</aside>" +
       "</nav>";
-
-    var activeByPage = {
-      home: "Home",
-      about: "Chi Sono",
-      cv: "CV",
-      contact: "Contattami",
-    };
-
-    var activeLabel = activeByPage[page];
-    if (activeLabel) {
-      var links = headerTarget.querySelectorAll(".nav-menu a, .nav-drawer__menu a");
-      links.forEach(function (link) {
-        if (link.textContent.trim() === activeLabel) {
-          link.setAttribute("aria-current", "page");
-        }
-      });
-    }
   }
 
   var footerTarget = document.querySelector("[data-site-footer]");
@@ -147,87 +54,70 @@
       '<div class="site-footer__inner">' +
       '<div class="site-footer__card">' +
       '<h2 class="site-footer__title">Restiamo in contatto</h2>' +
-      '<p class="site-footer__text">Se cerchi una Junior Web Developer motivata e attenta ai dettagli, scrivimi o contattami sui miei profili social.</p>' +
-      '<div class="contact-form__actions">' +
-      '<a class="site-footer__cta" href="' +
-      contactUrl +
-      '">Contattami</a>' +
-      "</div>" +
+      '<p class="site-footer__text">La landing principale contiene progetti, curriculum e form contatti. Per collaborazioni o opportunita puoi partire da li.</p>' +
+      '<a class="site-footer__cta" href="' + contactUrl + '">Vai alla landing</a>' +
       '<ul class="site-footer__social" aria-label="Social links">' +
-      '<li><a href="' +
-      githubUrl +
-      '" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>' +
-      '<li><a href="' +
-      linkedinUrl +
-      '" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>' +
-      '<li><a href="' +
-      instagramUrl +
-      '" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>' +
+      '<li><a href="' + githubUrl + '" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>' +
+      '<li><a href="' + linkedinUrl + '" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>' +
+      '<li><a href="' + instagramUrl + '" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>' +
       "</ul>" +
       '<div class="site-footer__legal" aria-label="Link legali">' +
-      '<a class="site-footer__legal-link" href="' +
-      privacyUrl +
-      '">Privacy Policy</a>' +
-      '<a class="site-footer__legal-link" href="' +
-      cookieUrl +
-      '">Cookie Policy</a>' +
+      '<a class="site-footer__legal-link" href="' + privacyUrl + '">Privacy Policy</a>' +
+      '<a class="site-footer__legal-link" href="' + cookieUrl + '">Cookie Policy</a>' +
       "</div>" +
-      '<p class="site-footer__copy">&copy; 2026 Alessandra Trapasso - Junior Web Developer</p>' +
+      '<p class="site-footer__copy">&copy; 2026 Alessandra Trapasso</p>' +
       "</div>" +
       "</div>";
   }
 
   var consentKey = "at_cookie_notice_v1";
-  var canUseStorage = function () {
-    try {
-      var key = "__consent_test__";
-      window.localStorage.setItem(key, "1");
-      window.localStorage.removeItem(key);
-      return true;
-    } catch (error) {
-      return false;
-    }
-  };
+  var storageEnabled = false;
 
-  var storageEnabled = canUseStorage();
-  var consentAccepted = storageEnabled && window.localStorage.getItem(consentKey) === "accepted";
-
-  if (!consentAccepted) {
-    var cookieBanner = document.createElement("section");
-    cookieBanner.className = "cookie-banner";
-    cookieBanner.setAttribute("role", "dialog");
-    cookieBanner.setAttribute("aria-label", "Informativa cookie");
-    cookieBanner.innerHTML =
-      '<div class="cookie-banner__inner">' +
-      '<p class="cookie-banner__text">Questo sito usa solo cookie tecnici e tecnologie equivalenti necessari al funzionamento (es. preferenza banner). Non uso cookie di profilazione o pubblicitari.</p>' +
-      '<div class="cookie-banner__actions">' +
-      '<a class="cookie-banner__link" href="' +
-      cookieUrl +
-      '">Leggi Cookie Policy</a>' +
-      '<button class="cookie-banner__btn" type="button">Ho capito</button>' +
-      "</div>" +
-      "</div>";
-    document.body.appendChild(cookieBanner);
-
-    var closeBanner = function () {
-      cookieBanner.classList.remove("is-visible");
-      setTimeout(function () {
-        cookieBanner.remove();
-      }, 240);
-    };
-
-    var acceptBtn = cookieBanner.querySelector(".cookie-banner__btn");
-    if (acceptBtn) {
-      acceptBtn.addEventListener("click", function () {
-        if (storageEnabled) {
-          window.localStorage.setItem(consentKey, "accepted");
-        }
-        closeBanner();
-      });
-    }
-
-    setTimeout(function () {
-      cookieBanner.classList.add("is-visible");
-    }, 60);
+  try {
+    var testKey = "__consent_test__";
+    window.localStorage.setItem(testKey, "1");
+    window.localStorage.removeItem(testKey);
+    storageEnabled = true;
+  } catch (error) {
+    storageEnabled = false;
   }
+
+  if (!storageEnabled || window.localStorage.getItem(consentKey) === "accepted") {
+    return;
+  }
+
+  var styleId = "site-cookie-banner-style";
+  if (!document.getElementById(styleId)) {
+    var style = document.createElement("style");
+    style.id = styleId;
+    style.textContent =
+      ".cookie-banner{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);width:min(960px,calc(100vw - 20px));padding:14px 16px;border-radius:22px;background:linear-gradient(135deg,#4F5DFF,#7B5CFF,#FF5ECF);color:#fff;box-shadow:0 20px 40px rgba(17,24,89,.24);z-index:1200}" +
+      ".cookie-banner__inner{display:flex;align-items:center;justify-content:space-between;gap:14px}" +
+      ".cookie-banner__text{margin:0;max-width:720px;font-size:13px;line-height:1.55}" +
+      ".cookie-banner__actions{display:flex;gap:10px;flex-wrap:wrap}" +
+      ".cookie-banner__actions a,.cookie-banner__actions button{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 15px;border-radius:999px;font-size:12px;font-weight:800;text-decoration:none;border:none}" +
+      ".cookie-banner__actions a{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.18)}" +
+      ".cookie-banner__actions button{background:#fff;color:#2E2A72;cursor:pointer}" +
+      "@media (max-width:760px){.cookie-banner__inner{flex-direction:column;align-items:flex-start}}";
+    document.head.appendChild(style);
+  }
+
+  var cookieBanner = document.createElement("section");
+  cookieBanner.className = "cookie-banner";
+  cookieBanner.setAttribute("role", "dialog");
+  cookieBanner.setAttribute("aria-label", "Informativa cookie");
+  cookieBanner.innerHTML =
+    '<div class="cookie-banner__inner">' +
+    '<p class="cookie-banner__text">Questo sito usa solo cookie tecnici e preferenze locali strettamente necessarie al funzionamento della landing e del banner.</p>' +
+    '<div class="cookie-banner__actions">' +
+    '<a href="' + cookieUrl + '">Cookie Policy</a>' +
+    '<button type="button">Ho capito</button>' +
+    "</div>" +
+    "</div>";
+  document.body.appendChild(cookieBanner);
+
+  cookieBanner.querySelector("button").addEventListener("click", function () {
+    window.localStorage.setItem(consentKey, "accepted");
+    cookieBanner.remove();
+  });
 })();

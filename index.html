@@ -1,42 +1,35 @@
 <!DOCTYPE html>
 <html lang="it">
-  <!-- HEAD -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Alessandra Trapasso | Junior Full Stack Web Developer con AI</title>
+    <title>Alessandra Trapasso | Full Stack Web Developer & AI</title>
     <meta
       name="description"
-      content="Portfolio di Alessandra Trapasso, Junior Full Stack Web Developer con AI: competenze, progetti, CV e contatti."
+      content="Portfolio di Alessandra Trapasso: Full Stack Web Development & AI, progetti, competenze, curriculum e contatti in una landing page unica."
     />
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href="/index.html" />
-
-    <meta property="og:title" content="Alessandra Trapasso | Junior Full Stack Web Developer con AI"/> <!-- Open Graph per social -->
-    <meta property="og:description" content="Competenze, progetti, CV e contatti di Alessandra Trapasso." />
+    <meta property="og:title" content="Alessandra Trapasso | Full Stack Web Developer & AI" />
+    <meta property="og:description" content="Competenze, progetti, curriculum e contatti di Alessandra Trapasso." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="it_IT" />
     <meta property="og:url" content="/index.html" />
-    <meta property="og:image" content="assets/img/og-cover.jpg"/> <!-- Immagine copertina -->
+    <meta property="og:image" content="assets/img/og-cover.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Alessandra Trapasso | Junior Full Stack Web Developer con AI" />
-    <meta name="twitter:description" content="Competenze, progetti, CV e contatti di Alessandra Trapasso." />
+    <meta name="twitter:title" content="Alessandra Trapasso | Full Stack Web Developer & AI" />
+    <meta name="twitter:description" content="Competenze, progetti, curriculum e contatti di Alessandra Trapasso." />
     <meta name="twitter:image" content="assets/img/og-cover.jpg" />
-
-    <link rel="icon" href="assets/icons/favicon.ico" /> <!-- Favicon -->
-
+    <link rel="icon" href="assets/icons/favicon.ico" />
     <link
-       rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
-      /> <!-- Icone -->
-
-    <link  
-     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
-      rel="stylesheet" 
-    /> <!-- Bootstrap -->
-
-    <link rel="stylesheet" href="style.css" /> <!-- CSS (con SCSS) -->
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css?v=20260414-final-footer-4" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -60,279 +53,549 @@
       }
     </script>
   </head>
-   
-  <!-- BODY -->
- <body id="home" data-base-path="." data-page="home">
-   <!-- HEADER -->
-   <header class="site-header" aria-label="Header principale" data-site-header></header>
-
-    <!-- MAIN -->
+  <body id="home" class="landing-page">
     <main>
-     <div class="hero-content container-fluid"> <!-- piccola introduzione di me -->
-     <div class="row align-items-center hero-row">
-       <div class="col-12 col-lg-7"> <!-- bootstrap -->
-         <div class="hero-text">
-             <h1 class="hero-title">
-             Ciao! 👋 Sono <br> Alessandra Trapasso
-           </h1>
+      <section id="hero" class="hero section" aria-label="Hero">
+        <div class="hero__frame">
+          <div class="hero__topbar reveal">
+            <a class="brand" href="#hero" aria-label="Vai alla Home">
+              <img src="assets/img/logo2.png" alt="Logo Alessandra Trapasso" class="brand__logo" />
+              <span class="brand__name">ALESSANDRA TRAPASSO</span>
+            </a>
 
-           <p class="hero-subtitle">
-             Junior Full Stack Web Developer in formazione. Trasformo idee in interfacce
-             pulite, responsive e orientate all'utente, con attenzione a struttura del codice,
-             performance e dettagli. Integro strumenti AI nel workflow per accelerare analisi
-             requisiti, sviluppo e testing, mantenendo controllo qualità continuo e controllo del
-             risultato finale.
-                  <br> <strong>Se cerchi una figura junior motivata, scrivimi: rispondo volentieri.</strong> 
-           </p>
+            <div class="hero__utility">
+              <div class="socials" aria-label="Social links">
+                <a
+                  class="socials__item"
+                  href="https://github.com/AlessandraTrapasso095"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                >
+                  <span class="socials__icon"><i class="fa-brands fa-github"></i></span>
+                  <span class="socials__label">GITHUB</span>
+                </a>
+                <a
+                  class="socials__item"
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  <span class="socials__icon"><i class="fa-brands fa-instagram"></i></span>
+                  <span class="socials__label">INSTAGRAM</span>
+                </a>
+                <a
+                  class="socials__item"
+                  href="https://www.linkedin.com/in/alessandra-trapasso-72b798392/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <span class="socials__icon"><i class="fa-brands fa-linkedin-in"></i></span>
+                  <span class="socials__label">LINKEDIN</span>
+                </a>
+              </div>
 
-           <p class="hero-availability">Disponibile per opportunità junior, stage e collaborazioni.</p>
+              <button
+                class="lang-switch"
+                type="button"
+                data-lang-toggle
+                aria-label="Cambia lingua"
+              >
+                <span class="lang-switch__flag" data-lang-flag>🇮🇹</span>
+                <span class="lang-switch__label" data-lang-label>ITALIAN</span>
+              </button>
+            </div>
+          </div>
 
-           <a class="hero-cta" href="contattami/index.html">
-             Contattami <!-- bottone -->
-           </a>
-         </div>
+          <div class="hero__inner">
+            <div class="hero__content">
+              <h1 class="hero__title reveal" data-i18n-html="heroTitle">
+                <span class="line">Ciao! 👋 Sono</span>
+                <span class="line">Alessandra</span>
+              </h1>
+              <p class="hero__text reveal" data-i18n-html="heroTextLead">
+                <strong>Junior Full Stack Web Developer e AI Developer.</strong><br />
+                Sviluppo interfacce moderne, responsive e orientate all'utente, curando struttura
+                del codice, performance e qualita del dettaglio. Integro strumenti di intelligenza
+                artificiale nel workflow per accelerare analisi, sviluppo e testing, mantenendo
+                sempre il pieno controllo sul risultato finale.
+              </p>
+              <p class="hero__text hero__text--strong reveal" data-i18n="heroTextStrong">
+                Se cerchi una figura junior motivata, scrivimi: rispondo volentieri.
+              </p>
+              <a class="hero__cta reveal" href="#contatti" data-i18n="heroPrimaryCta">Contattami</a>
+            </div>
+
+            <div class="hero__visual reveal">
+              <img
+                src="assets/img/hero%20fotopng.png"
+                alt="Foto profilo Alessandra Trapasso"
+                class="hero__portrait"
+              />
+            </div>
+          </div>
         </div>
+      </section>
 
-       <div class="col-12 col-lg-5"> <!-- bootstrap -->
-         <div class="hero-photo-wrap"> <!-- foto profilo -->
-           <img
-             src="assets/img/immagine_copertina_profilo.png"
-             alt="Foto profilo Alessandra Trapasso"
-             class="hero-photo"
-            />
-         </div>
-       </div>
-     </div>
-     </div>
+      <section id="perche" class="section section--light why" aria-label="Perche scegliere me">
+        <div class="container why__grid">
+          <div class="why__titleWrap reveal">
+            <h2 class="section-title" data-i18n-html="whyTitle">
+              Perche scegliere <span class="highlight">me?</span>
+            </h2>
+            <p class="section-subtitle" data-i18n="whyIntro">
+              Un approccio pratico, organizzato e orientato al risultato: sviluppo, AI applicata e attenzione costante alla qualita.
+            </p>
+          </div>
 
-     <section id="chi-sono" class="why-me" aria-label="Perché scegliere me">
-      <div class="why-me__inner">
-        <div class="why-me__card">
-          <h2 class="why-me__title">Perché scegliere me?</h2>
+          <div class="feature-list">
+            <article class="feature-card reveal">
+              <h3 data-i18n="whyCardOneTitle">Mentalita orientata alla soluzione</h3>
+              <p data-i18n="whyCardOneText">
+                Non solo codice: costruisco soluzioni utili e concrete. Ogni progetto parte dagli
+                obiettivi richiesti e viene sviluppato con un approccio pratico e funzionale.
+              </p>
+            </article>
 
-           <p class="why-me__text">
-           Sono una Junior Web Developer in formazione, con grande attenzione a layout puliti,
-           responsive e usabilità. Lavoro con cura, passo dopo passo, per trasformare idee in pagine
-           chiare e professionali.
+            <article class="feature-card reveal">
+              <h3 data-i18n="whyCardTwoTitle">Autonomia e responsabilita</h3>
+              <p data-i18n="whyCardTwoText">
+                Gestisco il lavoro in modo organizzato e pragmatico, mi muovo seguendo un filo logico
+                e tengo il focus su tempi, qualita e chiarezza operativa.
+              </p>
+            </article>
+
+            <article class="feature-card reveal">
+              <h3 data-i18n="whyCardThreeTitle">AI e agenti AI applicati</h3>
+              <p data-i18n="whyCardThreeText">
+                Uso l'AI come parte attiva del processo: analisi requisiti, supporto allo sviluppo,
+                testing assistito, automazioni e quality check.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="come-lavoro" class="section section--blue workflow" aria-label="Come lavoro per te">
+        <div class="container">
+          <h2 class="section-title reveal" data-i18n="processTitle">Come lavoro per te</h2>
+          <div class="workflow__cards">
+            <article class="workflow-card reveal">
+              <div class="workflow-card__media">
+                <img class="workflow-card__image" src="assets/img/1.png" alt="Analisi" />
+              </div>
+              <h3 class="workflow-card__title" data-i18n="processCardOneTitle">Analisi</h3>
+              <p class="workflow-card__text" data-i18n="processCardOneText">
+                Ascolto obiettivi e requisiti, definisco priorita e user flow, e preparo un piano di lavoro chiaro.
+              </p>
+            </article>
+
+            <article class="workflow-card reveal">
+              <div class="workflow-card__media">
+                <img class="workflow-card__image" src="assets/img/2.png" alt="Progettazione e sviluppo" />
+              </div>
+              <h3 class="workflow-card__title" data-i18n="processCardTwoTitle">Progettazione e sviluppo</h3>
+              <p class="workflow-card__text" data-i18n="processCardTwoText">
+                Organizzo struttura e contenuti, progetto UX/UI coerente e scelgo stack e componenti adatti al progetto.
+                Implemento frontend e logica applicativa con tecnologie moderne, integrazioni AI e codice mantenibile.
+              </p>
+            </article>
+
+            <article class="workflow-card reveal">
+              <div class="workflow-card__media">
+                <img class="workflow-card__image" src="assets/img/3.png" alt="Testing e rilascio" />
+              </div>
+              <h3 class="workflow-card__title" data-i18n="processCardThreeTitle">Testing e rilascio</h3>
+              <p class="workflow-card__text" data-i18n="processCardThreeText">
+                Eseguo quality check, test cross-device e ottimizzazioni finali prima della pubblicazione.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section section--light skills" aria-label="Skills">
+        <div class="container">
+          <h2 class="section-title reveal" data-i18n="skillsTitle">Skills</h2>
+          <p class="section-subtitle reveal" data-i18n="skillsIntro">
+            Competenze di sviluppo web e AI applicata al workflow.
           </p>
 
-         <div class="why-me__grid">
-            <div class="why-me__item">
-             <h3>Ordine e chiarezza</h3>
-               <p>Struttura pulita, semantica, facile da mantenere.</p>
-            </div>
+          <div class="skills__grid">
+            <article class="skills-panel skills-panel--dev reveal">
+              <div class="skills-panel__head">
+                <h3 class="skills-panel__title" data-i18n="skillsDevTitle">Sviluppo</h3>
+              </div>
+              <div class="skills-list skills-list--dev" id="skills-dev"></div>
+            </article>
 
-           <div class="why-me__item">
-             <h3>Responsive vero</h3>
-               <p>Layout adattato bene a mobile, tablet e desktop.</p>
-            </div>
-
-           <div class="why-me__item">
-             <h3>Attenzione ai dettagli</h3>
-               <p>Spaziature, leggibilità e coerenza visiva.</p>
-            </div>
-         </div>
-      </div>
-      </div>
-     </section>
-
-     <section class="process" aria-label="Come lavoro per te">
-     <div class="process__inner">
-       <h2 class="process__title">Come lavoro per te</h2>
-         <p class="process__subtitle">
-         Un processo semplice e chiaro: ti aggiorno passo dopo passo e trasformo l'idea in una soluzione web
-         completa, responsive e pronta al rilascio.
-         </p>
-
-       <div class="process__grid">
-         <article class="process-card">
-          <div class="process-card__num">01</div>
-             <h3 class="process-card__title">Analisi</h3>
-             <p class="process-card__text">
-             Ascolto obiettivi e requisiti, definisco priorita e user flow, e preparo un piano di lavoro chiaro.
-           </p>
-         </article>
-
-         <article class="process-card">
-          <div class="process-card__num">02</div>
-             <h3 class="process-card__title">Progettazione</h3>
-               <p class="process-card__text">
-               Organizzo struttura e contenuti, progetto UX/UI coerente e scelgo stack e componenti adatti al progetto.
-               </p>
-           </article>
-
-         <article class="process-card">
-          <div class="process-card__num">03</div>
-             <h3 class="process-card__title">Sviluppo</h3>
-               <p class="process-card__text">
-               Implemento frontend e logica applicativa con tecnologie moderne, integrazioni AI e codice mantenibile.
-               </p>
-           </article>
-
-         <article class="process-card">
-          <div class="process-card__num">04</div>
-             <h3 class="process-card__title">Testing e rilascio</h3>
-               <p class="process-card__text">
-               Eseguo quality check, test cross-device e ottimizzazioni finali prima della pubblicazione.
-               </p>
-          </article>
+            <article class="skills-panel skills-panel--ai reveal">
+              <div class="skills-panel__head">
+                <h3 class="skills-panel__title" data-i18n="skillsAiTitle">AI &amp; AI Agents</h3>
+              </div>
+              <div class="skills-list skills-list--ai" id="skills-ai"></div>
+            </article>
+          </div>
         </div>
-      </div>
-     </section>
+      </section>
 
-     <section id="skills" class="skills" aria-label="Skills">
-     <div class="skills__inner">
-       <div class="skills__card">
-         <h2 class="skills__title">Skills</h2>
-           <p class="skills__text">
-           Competenze tecniche in crescita continua, con focus su sviluppo web moderno,
-           AI applicata al workflow e progettazione UI essenziale.
-           </p>
+      <section id="progetti" class="section section--blue projects" aria-label="I miei progetti">
+        <div class="container">
+          <h2 class="section-title reveal" data-i18n="projectsTitle">I miei progetti</h2>
+          <p class="section-subtitle reveal" data-i18n="projectsIntro">
+            Una selezione di progetti sviluppati e migliorati nel tempo. Cliccando sull'immagine si apre la demo.
+          </p>
 
-           <div class="skills__layout">
-             <article class="skills-panel" aria-label="Competenze sviluppo">
-               <h3 class="skills-panel__title">Sviluppo</h3>
-               <div class="skills-panel__list">
-                 <div class="skills__item">
-                   <h3>JavaScript</h3>
-                   <p>Sviluppo frontend dinamico e gestione logica lato client.</p>
-                 </div>
-                 <div class="skills__item">
-                   <h3>Java</h3>
-                   <p>Basi solide OOP e struttura di applicazioni modulari.</p>
-                 </div>
-                 <div class="skills__item">
-                   <h3>TypeScript</h3>
-                   <p>Tipizzazione, mantenibilita e scalabilita del codice.</p>
-                 </div>
-                 <div class="skills__item">
-                   <h3>React</h3>
-                   <p>Creazione di componenti riusabili per interfacce moderne.</p>
-                 </div>
-                 <div class="skills__item">
-                   <h3>Angular</h3>
-                   <p>Struttura enterprise con componenti, servizi e routing.</p>
-                 </div>
-                 <div class="skills__item">
-                   <h3>Vue.js</h3>
-                   <p>Interfacce leggere e progressive con approccio reattivo.</p>
-                 </div>
-                 <div class="skills__item">
-                   <h3>Python</h3>
-                   <p>Script e automazioni per task tecnici e operativi.</p>
-                 </div>
-                 <div class="skills__item">
-                   <h3>PHP e MySQL</h3>
-                   <p>Backend web con gestione dati e query relazionali.</p>
-                 </div>
-                 <div class="skills__item">
-                   <h3>Node.js</h3>
-                   <p>API e toolchain JavaScript lato server.</p>
-                 </div>
-                 <div class="skills__item">
-                   <h3>WordPress</h3>
-                   <p>Siti gestibili, personalizzazioni tema e contenuti.</p>
-                 </div>
-               </div>
-             </article>
+          <div class="projects__grid" id="projects-grid" aria-live="polite"></div>
 
-             <article class="skills-panel" aria-label="Competenze intelligenza artificiale">
-               <h3 class="skills-panel__title">Intelligenza Artificiale</h3>
-               <div class="skills-panel__list">
-                 <div class="skills__item">
-                   <h3>Agenti AI</h3>
-                   <p>Uso operativo di agenti per task ripetitivi e produttivita.</p>
-                 </div>
-                 <div class="skills__item">
-                   <h3>Agenti AI per lo sviluppo</h3>
-                   <p>Supporto a refactor, debugging e accelerazione dei workflow.</p>
-                 </div>
-                 <div class="skills__item">
-                   <h3>AI e Prompt Engineering</h3>
-                   <p>Prompt strutturati per ottenere output tecnici affidabili.</p>
-                 </div>
-                 <div class="skills__item">
-                   <h3>Codex</h3>
-                   <p>Uso in flussi pratici per implementazione e revisione codice.</p>
-                 </div>
-                 <div class="skills__item">
-                   <h3>Lovable</h3>
-                   <p>Prototipazione rapida UI e test di idee prodotto.</p>
-                 </div>
-                 <div class="skills__item">
-                   <h3>Wix</h3>
-                   <p>Creazione e gestione di siti per vetrine e presenza online.</p>
-                 </div>
-                 <div class="skills__item">
-                   <h3>Automazioni con AI</h3>
-                   <p>Workflow automatizzati per task ripetitivi e operazioni tecniche.</p>
-                 </div>
-                 <div class="skills__item">
-                   <h3>Testing assistito</h3>
-                   <p>Supporto AI per test, verifica output e individuazione regressioni.</p>
-                 </div>
-                 <div class="skills__item">
-                   <h3>Analisi requisiti</h3>
-                   <p>Definizione funzionalita e casi d'uso con supporto AI.</p>
-                 </div>
-                 <div class="skills__item">
-                   <h3>Quality check</h3>
-                   <p>Valutazione critica delle risposte AI prima della consegna.</p>
-                 </div>
-               </div>
-             </article>
-           </div>
+          <div class="projects-more reveal">
+            <p data-i18n="projectsMoreText">Vai a tutti i miei repository su GitHub.</p>
+            <a
+              class="hero__cta"
+              href="https://github.com/AlessandraTrapasso095?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="projectsMoreCta"
+            >
+              Tutti i repository
+            </a>
+          </div>
+        </div>
+      </section>
 
-           <div class="skills-figma" aria-label="Competenze Figma">
-             <h3>Figma (livello base)</h3>
-             <p>Creazione wireframe semplici, organizzazione layout e handoff base design-to-code.</p>
-           </div>
-        </div> 
-      </div>
-     </section>
+      <section id="curriculum" class="section section--light cv" aria-label="Curriculum vitae">
+        <div class="container cv-layout">
+          <div class="cv-header reveal">
+            <h2 class="section-title" data-i18n="cvTitle">Curriculum Vitae</h2>
+            <p class="cv__intro" data-i18n="cvIntro">
+              Una sintesi ordinata del mio profilo, delle aree su cui sto costruendo esperienza concreta e della direzione professionale che sto seguendo.
+            </p>
+          </div>
 
-     <section id="progetti" class="projects-section" aria-label="Progetti">
-     <div class="projects-section__inner">
-       <h2 class="projects-section__title">Progetti</h2>
-    
-       <p class="projects-section__subtitle">
-         Una selezione dei progetti che ho già sviluppato e che continuo a migliorare.
-       </p>
+          <article class="cv-panel cv-panel--experience reveal">
+            <div class="cv-panel__head">
+              <i class="fa-solid fa-briefcase cv-panel__icon" aria-hidden="true"></i>
+              <h2 class="cv-panel__title" data-i18n="cvExperienceTitle">Collaborazioni e Progetti Personali</h2>
+            </div>
 
-       <div class="projects-grid" aria-live="polite"></div>
+            <div class="cv-timeline">
+              <article class="cv-timeline__item">
+                <div class="cv-timeline__marker" aria-hidden="true"></div>
+                <div class="cv-timeline__content">
+                  <div class="cv-timeline__top">
+                    <h3 class="cv-timeline__role" data-i18n="cvExperienceItemOneTitle">Progetti web personali</h3>
+                    <span class="cv-timeline__date" data-i18n="cvExperienceItemOneDate">2024 - oggi</span>
+                  </div>
+                  <p class="cv-timeline__text" data-i18n="cvExperienceItemOneText">
+                    Sviluppo di landing page, interfacce responsive e progetti portfolio-oriented con attenzione a struttura, performance e qualita visiva.
+                  </p>
+                  <div class="cv-tags" aria-label="Tecnologie e aree usate">
+                    <span class="cv-tag">JavaScript</span>
+                    <span class="cv-tag">TypeScript</span>
+                    <span class="cv-tag">Responsive</span>
+                  </div>
+                </div>
+              </article>
 
-       <div class="projects-more">
-         <p class="projects-more__text">Vedi altri progetti su</p>
-         <a class="projects-more__btn" href="https://github.com/AlessandraTrapasso095" aria-label="Apri GitHub">
-           <i class="fa-brands fa-github" aria-hidden="true"></i>
-           GitHub
-         </a>
-       </div>
-     </div>
-     </section>
-   </main>
+              <article class="cv-timeline__item">
+                <div class="cv-timeline__marker" aria-hidden="true"></div>
+                <div class="cv-timeline__content">
+                  <div class="cv-timeline__top">
+                    <h3 class="cv-timeline__role" data-i18n="cvExperienceItemTwoTitle">Frontend, UX e refactor</h3>
+                    <span class="cv-timeline__date" data-i18n="cvExperienceItemTwoDate">2024 - oggi</span>
+                  </div>
+                  <p class="cv-timeline__text" data-i18n="cvExperienceItemTwoText">
+                    Lavoro su architettura frontend, componenti riusabili e miglioramento dell'esperienza utente con un approccio pratico e ordinato.
+                  </p>
+                  <div class="cv-tags" aria-label="Tecnologie e aree usate">
+                    <span class="cv-tag">Angular</span>
+                    <span class="cv-tag">Vue.js</span>
+                    <span class="cv-tag">React</span>
+                  </div>
+                </div>
+              </article>
 
-   <!-- FOOTER -->
-   <footer class="site-footer" aria-label="Footer" data-site-footer></footer>
+              <article class="cv-timeline__item">
+                <div class="cv-timeline__marker" aria-hidden="true"></div>
+                <div class="cv-timeline__content">
+                  <div class="cv-timeline__top">
+                    <h3 class="cv-timeline__role" data-i18n="cvExperienceItemThreeTitle">AI nel workflow di sviluppo</h3>
+                    <span class="cv-timeline__date" data-i18n="cvExperienceItemThreeDate">2025 - oggi</span>
+                  </div>
+                  <p class="cv-timeline__text" data-i18n="cvExperienceItemThreeText">
+                    Uso strumenti AI per analisi requisiti, supporto allo sviluppo, testing assistito, automazioni e quality check del risultato finale.
+                  </p>
+                  <div class="cv-tags" aria-label="Tecnologie e aree usate">
+                    <span class="cv-tag">AI Workflow</span>
+                    <span class="cv-tag">Testing</span>
+                    <span class="cv-tag">Quality Check</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </article>
 
-   <!-- Netlify static fallback form (hidden from UI, required for detection) -->
-   <form name="contact" method="POST" action="/" data-netlify="true" netlify netlify-honeypot="bot-field" hidden>
-     <input type="hidden" name="form-name" value="contact" />
-     <input type="text" name="name" />
-     <input type="email" name="email" />
-     <input type="text" name="subject" />
-     <textarea name="message"></textarea>
-     <input type="checkbox" name="privacy_consent" value="yes" />
-     <input name="bot-field" />
-   </form>
+          <aside class="cv-side">
+            <article class="cv-panel cv-panel--education reveal">
+              <div class="cv-panel__head">
+                <i class="fa-solid fa-graduation-cap cv-panel__icon" aria-hidden="true"></i>
+                <h2 class="cv-panel__title" data-i18n="cvEducationTitle">Education</h2>
+              </div>
 
-   <script defer src="assets/js/projects-data.js"></script>
-   <script defer src="assets/js/site-config.js"></script>
-   <script defer src="assets/js/site-shell.js?v=20260311-security"></script>
-   <script defer src="assets/js/projects-render.js"></script>
-   <script defer src="assets/js/site-search.js?v=20260311-security"></script>
-   <script defer src="assets/js/lazy-media.js"></script>
-   <script defer src="assets/js/lazy-sections.js"></script>
-   <script defer src="assets/js/contact-popup.js?v=20260311-3"></script>
-</body>
+              <div class="cv-education__item">
+                <p class="cv-education__label" data-i18n="cvEducationLabelOne">Academy Tech</p>
+                <h3 class="cv-education__title" data-i18n="cvEducationItemOneTitle">Master in Full Stack Web Development &amp; AI</h3>
+                <p class="cv-education__text" data-i18n="cvEducationItemOneText">
+                  Percorso intensivo orientato a frontend, logica applicativa, strumenti AI e costruzione di progetti concreti.
+                </p>
+              </div>
+
+              <div class="cv-education__item cv-education__item--spaced">
+                <p class="cv-education__label" data-i18n="cvCertificationsLabel">Certificazioni</p>
+                <ul class="cv-certifications" aria-label="Elenco certificazioni">
+                  <li data-i18n="cvCertificationOne">AI Agent Developer</li>
+                  <li data-i18n="cvCertificationTwo">IBM AI Engineering</li>
+                  <li data-i18n="cvCertificationThree">Google Cybersecurity</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="cv-panel cv-panel--languages reveal">
+              <div class="cv-panel__head">
+                <i class="fa-solid fa-language cv-panel__icon" aria-hidden="true"></i>
+                <h2 class="cv-panel__title" data-i18n="cvLanguagesTitle">Languages</h2>
+              </div>
+
+              <div class="cv-languages">
+                <div class="cv-language">
+                  <span class="cv-language__name" data-i18n="cvLanguageOneName">Italiano</span>
+                  <span class="cv-language__level" data-i18n="cvLanguageOneLevel">Madrelingua</span>
+                </div>
+                <div class="cv-language">
+                  <span class="cv-language__name" data-i18n="cvLanguageTwoName">Inglese</span>
+                  <span class="cv-language__level" data-i18n="cvLanguageTwoLevel">C2</span>
+                </div>
+                <div class="cv-language">
+                  <span class="cv-language__name" data-i18n="cvLanguageThreeName">Spagnolo</span>
+                  <span class="cv-language__level" data-i18n="cvLanguageThreeLevel">C1</span>
+                </div>
+              </div>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section id="contatti" class="section section--blue contact" aria-label="Restiamo in contatto">
+        <div class="container">
+          <header class="contact-header reveal">
+            <h2 class="section-title contact-header__title" data-i18n="contactTitle">Restiamo in contatto</h2>
+            <p class="contact-header__text" data-i18n="contactIntro">
+              Se hai un progetto in mente o vuoi confrontarti su opportunità, scrivimi.
+            </p>
+          </header>
+
+          <div class="contact__grid">
+            <div class="contact-side reveal">
+              <article class="contact-card contact-card--accent">
+                <span class="contact-card__label contact-card__label--accent" data-i18n="contactLocationLabel">Disponibilita</span>
+                <h3 class="contact-card__title" data-i18n="contactLocationText">
+                  Disponibile per opportunità lavorative, stage, tirocini, collaborazioni e progetti digitali.
+                </h3>
+              </article>
+
+              <article class="contact-card contact-card--info">
+                <div class="contact-detail">
+                  <div class="contact-detail__icon">
+                    <i class="fa-solid fa-at" aria-hidden="true"></i>
+                  </div>
+                  <div>
+                    <p class="contact-detail__label" data-i18n="contactDirectLabel">Contatto</p>
+                    <p class="contact-detail__value" data-i18n="contactDirectText">
+                      alessandratrapasso917@gmail.com
+                    </p>
+                  </div>
+                </div>
+
+                <div class="contact-follow">
+                  <p class="contact-detail__label" data-i18n="contactFollowLabel">Seguimi anche qui</p>
+                  <div class="contact-socials" aria-label="Social links">
+                    <a
+                      href="https://github.com/AlessandraTrapasso095"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="GitHub"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/alessandra-trapasso-72b798392/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                    >
+                      <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a
+                      href="https://www.instagram.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                    >
+                      <i class="fa-brands fa-instagram"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="reveal">
+            <form
+              id="contact-form"
+              class="contact-form"
+              name="contact"
+              method="POST"
+              action="/?contact=sent"
+              data-netlify="true"
+              netlify
+              netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="_subject" value="Nuovo contatto dal portfolio" />
+              <p class="hp-field">
+                <label>Non compilare questo campo: <input name="bot-field" /></label>
+              </p>
+
+              <div class="form-grid">
+                <label>
+                  <span class="form-label" data-i18n="formNameLabel">Nome e cognome</span>
+                  <input
+                    class="form-control"
+                    id="contact-name"
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    data-i18n-placeholder="formNamePlaceholder"
+                    placeholder="Es. Mario Rossi"
+                    required
+                  />
+                </label>
+
+                <label>
+                  <span class="form-label" data-i18n="formEmailLabel">Email</span>
+                  <input
+                    class="form-control"
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    data-i18n-placeholder="formEmailPlaceholder"
+                    placeholder="Es. nome@dominio.com"
+                    required
+                  />
+                </label>
+
+                <label>
+                  <span class="form-label" data-i18n="formSubjectLabel">Oggetto</span>
+                  <input
+                    class="form-control"
+                    id="contact-subject"
+                    name="subject"
+                    type="text"
+                    data-i18n-placeholder="formSubjectPlaceholder"
+                    placeholder="Es. Collaborazione / Info progetto"
+                    required
+                  />
+                </label>
+
+                <label>
+                  <span class="form-label" data-i18n="formMessageLabel">Messaggio</span>
+                  <textarea
+                    class="form-control"
+                    id="contact-message"
+                    name="message"
+                    rows="6"
+                    data-i18n-placeholder="formMessagePlaceholder"
+                    placeholder="Scrivi qui il tuo messaggio..."
+                    required
+                  ></textarea>
+                </label>
+              </div>
+
+              <label class="form-check" for="privacy-consent">
+                <input
+                  id="privacy-consent"
+                  name="privacy_consent"
+                  type="checkbox"
+                  value="yes"
+                  required
+                />
+                <span data-i18n-html="formConsent">
+                  Acconsento al trattamento dei dati per essere ricontattato/a. Ho letto la
+                  <a href="privacy/index.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+                </span>
+              </label>
+
+              <button class="btn-submit" type="submit">
+                <span data-i18n="formSubmit">Invia messaggio</span>
+                <span class="btn-submit__icon" aria-hidden="true">➜</span>
+              </button>
+              <p class="contact-form__note" data-i18n="formNote">
+                I tuoi dati saranno usati solo per risponderti.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section footer-cta" aria-label="Chiusura landing">
+        <div class="container">
+          <div class="footer-cta__grid">
+            <div class="footer-cta__imageWrap reveal">
+              <img class="footer-cta__image" src="assets/img/foto finale.png" alt="Composizione finale illustrata" />
+            </div>
+
+            <div class="footer-cta__content reveal">
+              <h2 class="footer-cta__title" data-i18n="closingTitle">
+                Non vedo l'ora di aiutarti a dare vita ai tuoi sogni!
+              </h2>
+              <p class="footer-cta__text footer-cta__text--body" data-i18n-html="closingContactHtml">
+                Per qualsiasi domanda puoi contattarmi tramite il
+                <a class="footer-inline-cta" href="#contact-form">form</a>.
+              </p>
+
+              <div class="footer-cta__brand">
+                <img src="assets/img/logo2.png" alt="Logo Alessandra Trapasso" class="footer-cta__brandLogo" />
+                <span class="footer-cta__brandName">ALESSANDRA TRAPASSO</span>
+              </div>
+
+              <div class="footer-cta__legal">
+                <a class="footer-cta__legalLink" href="privacy/index.html">Privacy Policy</a>
+                <a class="footer-cta__legalLink" href="cookie/index.html">Cookie Policy</a>
+              </div>
+
+              <p class="footer-copy" data-i18n="footerText">
+                © 2026 Alessandra Trapasso — Junior Web Developer
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <form name="contact" method="POST" action="/" data-netlify="true" netlify netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="subject" />
+      <textarea name="message"></textarea>
+      <input type="checkbox" name="privacy_consent" value="yes" />
+      <input name="bot-field" />
+    </form>
+
+    <script defer src="assets/js/site-config.js"></script>
+    <script defer src="assets/js/projects-data.js?v=20260414-projects-compact"></script>
+    <script defer src="assets/js/landing.js?v=20260414-final-footer-3"></script>
+  </body>
 </html>

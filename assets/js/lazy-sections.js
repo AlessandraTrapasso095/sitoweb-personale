@@ -4,8 +4,8 @@
     var style = document.createElement("style");
     style.id = styleId;
     style.textContent =
-      ".lazy-section{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}" +
-      ".lazy-section.is-visible{opacity:1;transform:translateY(0)}";
+      ".lazy-section{opacity:0;transform:translateY(34px) scale(.985);filter:blur(8px);transition:opacity .7s cubic-bezier(.2,.9,.2,1),transform .7s cubic-bezier(.2,.9,.2,1),filter .7s ease}" +
+      ".lazy-section.is-visible{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}";
     document.head.appendChild(style);
   }
 
