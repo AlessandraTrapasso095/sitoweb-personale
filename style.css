@@ -594,7 +594,7 @@ main > div:first-child {
 .hero-content { /* piccola introduzione di me */
   min-height: auto;
   display: flex; /* allinea testo e colonna foto in verticale */
-  align-items: center;
+  align-items: flex-end;
   padding: 0 40px 0px;
   margin-top: 70px;
 }
@@ -675,6 +675,7 @@ main > div:first-child {
   border-radius: 0px;
   overflow: hidden;
   background: #ffffff;
+  align-self: flex-end;
 }
 
 .hero-photo {
