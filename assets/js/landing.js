@@ -14,15 +14,15 @@
   var note = form ? form.querySelector(".contact-form__note") : null;
   var skillsDev = document.getElementById("skills-dev");
   var skillsAi = document.getElementById("skills-ai");
+  var policyModal = document.getElementById("policy-modal");
+  var policyModalTitle = document.getElementById("policy-modal-title");
+  var policyModalBody = document.getElementById("policy-modal-body");
+  var privacyTemplate = document.getElementById("privacy-policy-template");
+  var cookieTemplate = document.getElementById("cookie-policy-template");
+  var lastPolicyTrigger = null;
 
   var translations = {
     it: {
-      navWhy: "Perche scegliere me",
-      navProcess: "Come lavoro",
-      navSkills: "Skills",
-      navProjects: "Progetti",
-      navCv: "Curriculum",
-      navContact: "Contatti",
       heroTitle: '<span class="line">Ciao! <span class="hero__wave">👋</span> Sono</span><span class="line">Alessandra</span>',
       heroTextLead:
         "<strong>Junior Full Stack Web Developer e AI Developer.</strong><br>Sviluppo interfacce moderne, responsive e orientate all'utente, curando struttura del codice, performance e qualita del dettaglio. Integro strumenti di intelligenza artificiale nel workflow per accelerare analisi, sviluppo e testing, mantenendo sempre il pieno controllo sul risultato finale.",
@@ -52,14 +52,11 @@
       processCardThreeTitle: "Testing e rilascio",
       processCardThreeText:
         "Eseguo quality check, test cross-device e ottimizzazioni finali prima della pubblicazione.",
-      skillsOverline: "Competenze",
       skillsTitle: "Skills",
       skillsIntro:
         "Competenze di sviluppo web e AI applicata al workflow.",
       skillsDevTitle: "Sviluppo",
       skillsAiTitle: "AI & AI Agents",
-      skillsFigmaText:
-        "Competenze di base su wireframe semplici, organizzazione layout e handoff essenziale.",
       projectsTitle: "I miei progetti",
       projectsIntro:
         "Una selezione di progetti sviluppati e migliorati nel tempo. Cliccando sull'immagine si apre la demo.",
@@ -101,18 +98,6 @@
       cvLanguageTwoLevel: "C2",
       cvLanguageThreeName: "Spagnolo",
       cvLanguageThreeLevel: "C1",
-      cvCardOneTitle: "Profilo",
-      cvCardOneText:
-        "Junior Full Stack Web Developer in formazione. Focus su sviluppo web moderno, AI applicata al workflow e qualita del risultato finale.",
-      cvCardTwoTitle: "Esperienza",
-      cvCardTwoText:
-        "Collaborazioni e progetti personali su frontend, refactor, UX, integrazione strumenti AI e miglioramento della manutenibilita.",
-      cvCardThreeTitle: "Formazione",
-      cvCardThreeText:
-        "Percorso in Full Stack Web Development & AI, affiancato da studio continuo, pratica e costruzione di progetti reali.",
-      cvCardFourTitle: "Lingue e certificazioni",
-      cvCardFourText:
-        "Italiano madrelingua, Inglese C2, Spagnolo C1. Certificazioni in ambito digitale, innovation e sviluppo.",
       contactOverline: "Restiamo in contatto",
       contactTitle: "Restiamo in contatto",
       contactIntro:
@@ -122,9 +107,6 @@
       contactDirectLabel: "Contatto",
       contactDirectText: "alessandratrapasso917@gmail.com",
       contactFollowLabel: "Seguimi anche qui",
-      contactMiniOneText: "Opportunita junior, stage, collaborazioni e progetti web.",
-      contactMiniTwoText: "Frontend moderno, AI nel workflow, quality check e attenzione UX.",
-      contactFormTitle: "Scrivimi",
       formNameLabel: "Nome e cognome",
       formNamePlaceholder: "Es. Mario Rossi",
       formEmailLabel: "Email",
@@ -134,29 +116,22 @@
       formMessageLabel: "Messaggio",
       formMessagePlaceholder: "Scrivi qui il tuo messaggio...",
       formConsent:
-        'Acconsento al trattamento dei dati per essere ricontattato/a. Ho letto la <a href="privacy/index.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.',
+        'Acconsento al trattamento dei dati per essere ricontattato/a. Ho letto la <a href="#privacy-policy" data-policy-open="privacy">Privacy Policy</a>.',
       formSubmit: "Invia messaggio",
       formNote: "I tuoi dati saranno usati solo per risponderti.",
       formSending: "Invio in corso...",
       formSuccess: "Messaggio inviato correttamente.",
-      closingOverline: "Chiusura",
-      closingTitle: "Non vedo l'ora di aiutarti a dare vita ai tuoi sogni!",
+      closingTitleHtml:
+        "<span class=\"footer-cta__line footer-cta__line--nowrap\">Non vedo l'ora di aiutarti</span><span class=\"footer-cta__line footer-cta__line--nowrap\">a dare vita ai tuoi sogni!</span>",
       closingContactHtml:
-        'Per qualsiasi domanda puoi contattarmi tramite il&nbsp;<a class="footer-inline-cta" href="#contact-form">form</a>.',
-      closingText:
-        "Per qualsiasi domanda puoi contattarmi tramite il form.",
-      closingPrimary: "Vai al form",
+        'Per qualsiasi domanda puoi contattarmi tramite il&nbsp;<a class="footer-inline-cta" href="#contact-form">form</a>',
+      closingSocialText: "Mi trovi anche sui miei social",
       footerText:
         "© 2026 Alessandra Trapasso — Junior Web Developer",
-      footerContactLink: "Vai al form contatti"
+      policyPrivacyTitle: "Privacy Policy",
+      policyCookieTitle: "Cookie Policy"
     },
     en: {
-      navWhy: "Why me",
-      navProcess: "How I work",
-      navSkills: "Skills",
-      navProjects: "Projects",
-      navCv: "Resume",
-      navContact: "Contact",
       heroTitle: "<span class=\"line\">Hi! <span class=\"hero__wave\">👋</span> I'm</span><span class=\"line\">Alessandra</span>",
       heroTextLead:
         "<strong>Junior Full Stack Web Developer and AI Developer.</strong><br>I build modern, responsive and user-oriented interfaces, with strong attention to code structure, performance and quality of detail. I integrate artificial intelligence tools into the workflow to speed up analysis, development and testing, while always keeping full control over the final result.",
@@ -186,14 +161,11 @@
       processCardThreeTitle: "Testing and release",
       processCardThreeText:
         "I carry out quality checks, cross-device testing and final optimizations before publication.",
-      skillsOverline: "Capabilities",
       skillsTitle: "Skills",
       skillsIntro:
         "Web development and AI skills applied to workflow.",
       skillsDevTitle: "Development",
       skillsAiTitle: "AI & AI Agents",
-      skillsFigmaText:
-        "Basic skills in simple wireframes, layout organization and essential handoff.",
       projectsTitle: "Selected projects",
       projectsIntro:
         "A curated selection of projects developed and refined over time. Clicking the image opens the demo.",
@@ -235,30 +207,15 @@
       cvLanguageTwoLevel: "C2",
       cvLanguageThreeName: "Spanish",
       cvLanguageThreeLevel: "C1",
-      cvCardOneTitle: "Profile",
-      cvCardOneText:
-        "Junior Full Stack Web Developer in training. Focused on modern web development, AI-powered workflows and the quality of the final result.",
-      cvCardTwoTitle: "Experience",
-      cvCardTwoText:
-        "Personal projects and collaborations across frontend work, refactoring, UX, AI tool integration and maintainability improvements.",
-      cvCardThreeTitle: "Education",
-      cvCardThreeText:
-        "Training path in Full Stack Web Development & AI, supported by continuous study, hands-on practice and real projects.",
-      cvCardFourTitle: "Languages and certifications",
-      cvCardFourText:
-        "Native Italian, English C2, Spanish C1. Certifications in digital topics, innovation and development.",
       contactOverline: "Let's stay in touch",
       contactTitle: "Let's stay in touch",
       contactIntro:
         "If you have a project in mind or want to talk about opportunities, write to me.",
       contactLocationLabel: "Availability",
-      contactLocationText: "Available for junior opportunities, collaborations and digital projects.",
+      contactLocationText: "Available for job opportunities, internships, traineeships, collaborations and digital projects.",
       contactDirectLabel: "Contact",
       contactDirectText: "alessandratrapasso917@gmail.com",
       contactFollowLabel: "Follow the craft",
-      contactMiniOneText: "Junior opportunities, internships, collaborations and web projects.",
-      contactMiniTwoText: "Modern frontend, AI in the workflow, quality checks and UX attention.",
-      contactFormTitle: "Write to me",
       formNameLabel: "Full name",
       formNamePlaceholder: "E.g. Mario Rossi",
       formEmailLabel: "Email",
@@ -268,21 +225,20 @@
       formMessageLabel: "Message",
       formMessagePlaceholder: "Write your message here...",
       formConsent:
-        'I consent to the processing of my data so I can be contacted back. I have read the <a href="privacy/index.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.',
+        'I consent to the processing of my data so I can be contacted back. I have read the <a href="#privacy-policy" data-policy-open="privacy">Privacy Policy</a>.',
       formSubmit: "Send message",
       formNote: "Your data will only be used to reply to you.",
       formSending: "Sending...",
       formSuccess: "Message sent successfully.",
-      closingOverline: "Closing",
-      closingTitle: "I can't wait to help you bring your dreams to life!",
+      closingTitleHtml:
+        "<span class=\"footer-cta__line footer-cta__line--nowrap\">I can't wait to help you</span><span class=\"footer-cta__line footer-cta__line--nowrap\">bring your dreams to life!</span>",
       closingContactHtml:
-        'For any question, you can contact me through the&nbsp;<a class="footer-inline-cta" href="#contact-form">form</a>.',
-      closingText:
-        "For any question, you can contact me through the form.",
-      closingPrimary: "Go to form",
+        'For any question, you can contact me through the&nbsp;<a class="footer-inline-cta" href="#contact-form">form</a>',
+      closingSocialText: "You can also find me on my socials",
       footerText:
         "© 2026 Alessandra Trapasso — Junior Web Developer",
-      footerContactLink: "Go to contact form"
+      policyPrivacyTitle: "Privacy Policy",
+      policyCookieTitle: "Cookie Policy"
     }
   };
 
@@ -735,6 +691,65 @@
     });
   }
 
+  function openPolicyModal(policyType, trigger) {
+    if (!policyModal || !policyModalTitle || !policyModalBody) return;
+
+    var dict = translations[currentLang] || translations.it;
+    var template = policyType === "cookie" ? cookieTemplate : privacyTemplate;
+    if (!template) return;
+
+    lastPolicyTrigger = trigger || document.activeElement;
+    policyModalTitle.textContent =
+      policyType === "cookie" ? dict.policyCookieTitle : dict.policyPrivacyTitle;
+    policyModalBody.innerHTML = template.innerHTML;
+    policyModal.hidden = false;
+    policyModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("is-policy-open");
+
+    var closeButton = policyModal.querySelector(".policy-modal__close");
+    if (closeButton) {
+      closeButton.focus();
+    }
+  }
+
+  function closePolicyModal() {
+    if (!policyModal || policyModal.hidden) return;
+
+    policyModal.hidden = true;
+    policyModal.setAttribute("aria-hidden", "true");
+    policyModalBody.innerHTML = "";
+    document.body.classList.remove("is-policy-open");
+
+    if (lastPolicyTrigger && typeof lastPolicyTrigger.focus === "function") {
+      lastPolicyTrigger.focus();
+    }
+  }
+
+  function setupPolicyModal() {
+    if (!policyModal) return;
+
+    document.addEventListener("click", function (event) {
+      var openTrigger = event.target.closest("[data-policy-open]");
+      if (openTrigger) {
+        event.preventDefault();
+        openPolicyModal(openTrigger.getAttribute("data-policy-open"), openTrigger);
+        return;
+      }
+
+      var closeTrigger = event.target.closest("[data-policy-close]");
+      if (closeTrigger) {
+        event.preventDefault();
+        closePolicyModal();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closePolicyModal();
+      }
+    });
+  }
+
   if (langToggle) {
     langToggle.addEventListener("click", function () {
       var nextLang = currentLang === "it" ? "en" : "it";
@@ -754,5 +769,6 @@
   renderSkills();
   renderProjects();
   setupForm();
+  setupPolicyModal();
   observeReveals(document.querySelectorAll(".reveal"));
 })();

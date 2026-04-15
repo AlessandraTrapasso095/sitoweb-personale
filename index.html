@@ -25,11 +25,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css?v=20260414-final-footer-4" />
+    <link rel="stylesheet" href="style.css?v=20260415-responsive-1" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -533,7 +529,7 @@
                 />
                 <span data-i18n-html="formConsent">
                   Acconsento al trattamento dei dati per essere ricontattato/a. Ho letto la
-                  <a href="privacy/index.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+                  <a href="#privacy-policy" data-policy-open="privacy">Privacy Policy</a>.
                 </span>
               </label>
 
@@ -552,37 +548,189 @@
       <section class="section footer-cta" aria-label="Chiusura landing">
         <div class="container">
           <div class="footer-cta__grid">
-            <div class="footer-cta__imageWrap reveal">
-              <img class="footer-cta__image" src="assets/img/foto finale.png" alt="Composizione finale illustrata" />
-            </div>
+            <div class="footer-cta__imageWrap reveal"></div>
 
             <div class="footer-cta__content reveal">
-              <h2 class="footer-cta__title" data-i18n="closingTitle">
-                Non vedo l'ora di aiutarti a dare vita ai tuoi sogni!
+              <h2 class="footer-cta__title" data-i18n-html="closingTitleHtml">
+                Non vedo l'ora di aiutarti<br />a dare vita ai tuoi sogni!
               </h2>
               <p class="footer-cta__text footer-cta__text--body" data-i18n-html="closingContactHtml">
                 Per qualsiasi domanda puoi contattarmi tramite il
-                <a class="footer-inline-cta" href="#contact-form">form</a>.
+                <a class="footer-inline-cta" href="#contact-form">form</a>
               </p>
 
-              <div class="footer-cta__brand">
-                <img src="assets/img/logo2.png" alt="Logo Alessandra Trapasso" class="footer-cta__brandLogo" />
-                <span class="footer-cta__brandName">ALESSANDRA TRAPASSO</span>
+              <div class="footer-cta__socialBlock">
+                <p class="footer-cta__text footer-cta__text--body footer-cta__socialText" data-i18n="closingSocialText">
+                  Mi trovi anche sui miei social
+                </p>
+
+                <div class="footer-cta__socials" aria-label="Social footer links">
+                  <a
+                    class="footer-cta__socialLink socials__item"
+                    href="https://github.com/AlessandraTrapasso095"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                  >
+                    <span class="socials__icon"><i class="fa-brands fa-github"></i></span>
+                    <span class="socials__label">GITHUB</span>
+                  </a>
+                  <a
+                    class="footer-cta__socialLink socials__item"
+                    href="https://www.linkedin.com/in/alessandra-trapasso-72b798392/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                  >
+                    <span class="socials__icon"><i class="fa-brands fa-linkedin-in"></i></span>
+                    <span class="socials__label">LINKEDIN</span>
+                  </a>
+                  <a
+                    class="footer-cta__socialLink socials__item"
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                  >
+                    <span class="socials__icon"><i class="fa-brands fa-instagram"></i></span>
+                    <span class="socials__label">INSTAGRAM</span>
+                  </a>
+                </div>
               </div>
 
               <div class="footer-cta__legal">
-                <a class="footer-cta__legalLink" href="privacy/index.html">Privacy Policy</a>
-                <a class="footer-cta__legalLink" href="cookie/index.html">Cookie Policy</a>
+                <button class="footer-cta__legalLink" type="button" data-policy-open="privacy">Privacy Policy</button>
+                <button class="footer-cta__legalLink" type="button" data-policy-open="cookie">Cookie Policy</button>
               </div>
 
-              <p class="footer-copy" data-i18n="footerText">
-                © 2026 Alessandra Trapasso — Junior Web Developer
-              </p>
+              <div class="footer-cta__bottomline">
+                <div class="footer-cta__brand">
+                  <img src="assets/img/logo2.png" alt="Logo Alessandra Trapasso" class="footer-cta__brandLogo" />
+                  <span class="footer-cta__brandName">ALESSANDRA TRAPASSO</span>
+                </div>
+
+                <p class="footer-copy" data-i18n="footerText">
+                  © 2026 Alessandra Trapasso — Junior Web Developer
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </main>
+
+    <div
+      class="policy-modal"
+      id="policy-modal"
+      hidden
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="policy-modal-title"
+    >
+      <div class="policy-modal__overlay" data-policy-close></div>
+      <div class="policy-modal__panel" role="document">
+        <button class="policy-modal__close" type="button" data-policy-close aria-label="Chiudi policy">×</button>
+        <h2 class="policy-modal__title" id="policy-modal-title">Privacy Policy</h2>
+        <div class="policy-modal__body" id="policy-modal-body"></div>
+      </div>
+    </div>
+
+    <template id="privacy-policy-template">
+      <article class="policy-content" aria-label="Informativa privacy">
+        <h3 class="policy-content__sectionTitle">1. Titolare del trattamento</h3>
+        <p class="policy-content__text">
+          Il titolare del trattamento e Alessandra Trapasso. Per richieste privacy puoi usare il modulo presente
+          nella sezione Contattami del sito.
+        </p>
+
+        <h3 class="policy-content__sectionTitle">2. Dati trattati</h3>
+        <p class="policy-content__text">
+          Quando invii il modulo di contatto vengono trattati i dati che inserisci: nome, email, oggetto e
+          messaggio.
+        </p>
+
+        <h3 class="policy-content__sectionTitle">3. Finalita e base giuridica</h3>
+        <p class="policy-content__text">
+          I dati sono trattati esclusivamente per rispondere alle richieste di contatto e valutare eventuali
+          collaborazioni professionali. La base giuridica e l'esecuzione di misure precontrattuali richieste
+          dall'interessato e il legittimo interesse a gestire comunicazioni professionali.
+        </p>
+
+        <h3 class="policy-content__sectionTitle">4. Modalita di trattamento</h3>
+        <p class="policy-content__text">
+          I dati sono trattati con strumenti digitali e con misure tecniche e organizzative adeguate alla
+          protezione delle informazioni.
+        </p>
+
+        <h3 class="policy-content__sectionTitle">5. Conservazione</h3>
+        <p class="policy-content__text">
+          I dati vengono conservati per il tempo necessario a gestire la richiesta e, in caso di follow-up
+          professionale, per il periodo strettamente necessario alle relative comunicazioni.
+        </p>
+
+        <h3 class="policy-content__sectionTitle">6. Destinatari e servizi terzi</h3>
+        <p class="policy-content__text">
+          Per la gestione tecnica del sito e del form vengono utilizzati servizi terzi di hosting e deploy. I dati
+          possono transitare su tali piattaforme solo per finalita tecniche di invio e ricezione delle richieste.
+        </p>
+
+        <h3 class="policy-content__sectionTitle">7. Diritti dell'interessato</h3>
+        <p class="policy-content__text">
+          Puoi richiedere accesso, rettifica, cancellazione, limitazione del trattamento, opposizione e portabilita
+          dei dati nei limiti previsti dal GDPR. Puoi inoltre proporre reclamo all'autorita di controllo competente.
+        </p>
+
+        <h3 class="policy-content__sectionTitle">8. Sicurezza</h3>
+        <p class="policy-content__text">
+          Il sito adotta misure di sicurezza applicative e header HTTP di protezione per ridurre i rischi comuni
+          lato web. Nessun sistema e sicuro al 100%, ma la configurazione e progettata per minimizzare esposizioni
+          evitabili.
+        </p>
+      </article>
+    </template>
+
+    <template id="cookie-policy-template">
+      <article class="policy-content" aria-label="Informativa cookie">
+        <h3 class="policy-content__sectionTitle">1. Cosa sono i cookie</h3>
+        <p class="policy-content__text">
+          I cookie sono piccoli file di testo memorizzati sul dispositivo dell'utente durante la navigazione.
+          Possono essere tecnici, quindi necessari al funzionamento del sito, oppure usati per finalita di analisi
+          o profilazione.
+        </p>
+
+        <h3 class="policy-content__sectionTitle">2. Cookie usati da questo sito</h3>
+        <p class="policy-content__text">
+          Questo sito usa solo cookie tecnici e tecnologie equivalenti strettamente necessarie al funzionamento,
+          ad esempio per memorizzare la chiusura del banner informativo. Non vengono usati cookie di profilazione o
+          pubblicitari.
+        </p>
+
+        <h3 class="policy-content__sectionTitle">3. Form di contatto</h3>
+        <p class="policy-content__text">
+          L'invio del modulo contatti usa servizi tecnici di hosting e form per recapitare il messaggio. I dati
+          inseriti non sono usati per tracciamento pubblicitario.
+        </p>
+
+        <h3 class="policy-content__sectionTitle">4. Gestione preferenze</h3>
+        <p class="policy-content__text">
+          Puoi cancellare i cookie dal browser in qualunque momento. Se rimuovi i cookie tecnici del sito, alcune
+          preferenze come il banner cookie gia accettato potrebbero essere richieste di nuovo.
+        </p>
+
+        <h3 class="policy-content__sectionTitle">5. Come disabilitare i cookie dal browser</h3>
+        <p class="policy-content__text">
+          Puoi gestire o bloccare i cookie dalle impostazioni del tuo browser, come Chrome, Safari, Firefox o Edge.
+          La disattivazione totale dei cookie tecnici puo influire su alcune funzionalita.
+        </p>
+
+        <h3 class="policy-content__sectionTitle">6. Aggiornamenti della policy</h3>
+        <p class="policy-content__text">
+          Questa Cookie Policy puo essere aggiornata in caso di modifiche tecniche o normative. La data di ultimo
+          aggiornamento e indicata nella pagina dedicata del sito.
+        </p>
+      </article>
+    </template>
 
     <form name="contact" method="POST" action="/" data-netlify="true" netlify netlify-honeypot="bot-field" hidden>
       <input type="hidden" name="form-name" value="contact" />
@@ -594,8 +742,7 @@
       <input name="bot-field" />
     </form>
 
-    <script defer src="assets/js/site-config.js"></script>
     <script defer src="assets/js/projects-data.js?v=20260414-projects-compact"></script>
-    <script defer src="assets/js/landing.js?v=20260414-final-footer-3"></script>
+    <script defer src="assets/js/landing.js?v=20260415-policy-modal-1"></script>
   </body>
 </html>
