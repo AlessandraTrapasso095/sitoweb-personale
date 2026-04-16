@@ -1599,7 +1599,7 @@ textarea.form-control {
 
 .footer-cta__content {
   min-height: 620px;
-  padding: 8px 0 0;
+  padding: 38px 0 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1677,7 +1677,7 @@ textarea.form-control {
   align-items: center;
   gap: 10px;
   margin-top: 0;
-  transform: translateY(-2px);
+  transform: translateY(-20px);
 }
 
 .footer-cta__brandLogo {
@@ -2280,6 +2280,46 @@ body.is-policy-open {
   }
 }
 
+@media (max-width: 720px) {
+  .footer-cta__socialBlock {
+    width: 100%;
+    align-items: center;
+  }
+
+  .footer-cta__socialText {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-cta__socials {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-cta__legal {
+    width: 100%;
+    align-self: center;
+    justify-content: center;
+  }
+
+  .footer-cta__bottomline {
+    align-items: center;
+    gap: 14px;
+  }
+
+  .footer-cta__brand {
+    align-self: center;
+    justify-content: center;
+    transform: translateY(0);
+  }
+
+  .footer-copy {
+    align-self: center;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
 @media (max-width: 560px) {
   .container,
   .u-inner {
@@ -2467,7 +2507,7 @@ body.is-policy-open {
   }
 
   .footer-copy {
-    align-self: flex-start;
-    text-align: left;
+    align-self: center;
+    text-align: center;
   }
 }
