@@ -25,7 +25,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css?v=20260415-responsive-4" />
+    <link rel="stylesheet" href="style.css?v=20260422-footer-mobile-2" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -125,11 +125,14 @@
             </div>
 
             <div class="hero__visual reveal">
-              <img
-                src="assets/img/hero%20fotopng.png"
-                alt="Foto profilo Alessandra Trapasso"
-                class="hero__portrait"
-              />
+              <picture>
+                <source media="(max-width: 560px)" srcset="assets/img/hero-mobile.png?v=20260422-touch-1" />
+                <img
+                  src="assets/img/hero%20fotopng.png"
+                  alt="Foto profilo Alessandra Trapasso"
+                  class="hero__portrait"
+                />
+              </picture>
             </div>
           </div>
         </div>

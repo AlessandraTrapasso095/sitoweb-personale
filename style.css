@@ -1982,7 +1982,7 @@ body.is-policy-open {
 @media (max-width: 1100px) {
   .hero {
     height: auto;
-    min-height: 100svh;
+    min-height: 0;
   }
 
   .why__grid,
@@ -2321,6 +2321,11 @@ body.is-policy-open {
 }
 
 @media (max-width: 560px) {
+  .hero {
+    height: auto;
+    min-height: 0;
+  }
+
   .container,
   .u-inner {
     width: min(100% - 22px, var(--container));
@@ -2331,7 +2336,9 @@ body.is-policy-open {
   }
 
   .hero__frame {
-    padding: 24px 16px 34px;
+    padding: 24px 16px 0;
+    height: auto;
+    min-height: 0;
   }
 
   .hero__content {
@@ -2353,15 +2360,26 @@ body.is-policy-open {
   }
 
   .hero__visual {
-    width: min(100%, 360px);
-    height: 340px;
-    min-height: 340px;
+    width: 100vw;
+    height: auto;
+    min-height: 0;
+    margin: 26px calc(50% - 50vw) 0;
+    overflow: visible;
+    display: block;
+  }
+
+  .hero__visual picture {
+    display: block;
+    width: 100%;
   }
 
   .hero__portrait {
-    width: 560px;
-    right: -92px;
-    bottom: 0;
+    position: static;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    transform: none;
+    display: block;
   }
 
   .socials {
@@ -2392,17 +2410,83 @@ body.is-policy-open {
   }
 
   .dev-skill-card {
-    min-height: 152px;
+    min-height: 0;
+    padding: 12px 8px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    gap: 8px;
   }
 
-  .skills-list--dev,
+  .dev-skill-card__top {
+    margin-bottom: 0;
+  }
+
+  .dev-skill-card__icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    font-size: 0.66rem;
+  }
+
+  .dev-skill-card__title {
+    margin: 0;
+    font-size: 0.72rem;
+    line-height: 1.15;
+  }
+
+  .dev-skill-card__text {
+    display: none;
+  }
+
+  .skills-list--dev {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
   .skills-list--ai {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
   }
 
   .ai-skill-card--hero,
   .ai-skill-card--feature {
     min-height: 160px;
+  }
+
+  .skills-list--ai > .ai-skill-card:nth-child(-n+3) {
+    grid-column: 1 / -1;
+  }
+
+  .skills-list--ai > .ai-skill-card:nth-child(n+4) {
+    min-height: 0;
+    padding: 12px 8px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .skills-list--ai > .ai-skill-card:nth-child(n+4) .ai-skill-card__icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    font-size: 0.66rem;
+  }
+
+  .skills-list--ai > .ai-skill-card:nth-child(n+4) .ai-skill-card__title {
+    margin: 0;
+    font-size: 0.72rem;
+    line-height: 1.15;
+  }
+
+  .skills-list--ai > .ai-skill-card:nth-child(n+4) .ai-skill-card__text,
+  .skills-list--ai > .ai-skill-card:nth-child(n+4) .ai-skill-card__ghost {
+    display: none;
   }
 
   .ai-skill-card__ghost {
@@ -2455,6 +2539,27 @@ body.is-policy-open {
     padding: 18px 16px;
   }
 
+  .contact__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .contact-side {
+    display: contents;
+  }
+
+  .contact-card--accent {
+    order: 1;
+  }
+
+  .contact-formWrap {
+    order: 2;
+  }
+
+  .contact-card--info {
+    order: 3;
+  }
+
   .form-control {
     min-height: 48px;
   }
@@ -2471,13 +2576,25 @@ body.is-policy-open {
     width: 100%;
   }
 
+  .why {
+    position: relative;
+    z-index: 3;
+    margin-top: clamp(-104px, -18vw, -72px);
+    padding-top: 56px;
+  }
+
   .footer-copy {
     font-size: 0.78rem;
     line-height: 1.5;
   }
 
   .footer-cta__imageWrap {
-    min-height: 280px;
+    min-height: clamp(455px, 116vw, 565px);
+    margin-inline: calc(50% - 50vw) 0;
+    background-image: url("assets/img/foto-finale-mobile.png");
+    background-position: left top;
+    background-size: auto 108%;
+    background-repeat: no-repeat;
   }
 
   .footer-cta__content {
