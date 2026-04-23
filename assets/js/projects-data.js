@@ -26,7 +26,7 @@ window.PORTFOLIO_PROJECTS = [
     descriptionEn:
       "Ricette e Tagli Sicuri is a practical weaning guide with simple and safe recipes for children. It helps parents prepare balanced meals and cut food correctly to avoid risks.",
     tags: ["Next.js 16", "TypeScript", "Supabase", "OpenAI", "Tailwind CSS 4"],
-    demoUrl: "https://ricette-e-tagli-sicuri.vercel.app/",
+    demoUrl: "https://ricettetaglisicuri.com/",
     githubUrl: "https://github.com/AlessandraTrapasso095/Ricette-e-Tagli-Sicuri.git",
     imageSrc: "assets/img/project-ricette.png",
     imageAlt: "Anteprima del sito Ricette e Tagli Sicuri"

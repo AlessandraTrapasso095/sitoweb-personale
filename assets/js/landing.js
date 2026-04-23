@@ -120,6 +120,10 @@
       formSubmit: "Invia messaggio",
       formNote: "I tuoi dati saranno usati solo per risponderti.",
       formSending: "Invio in corso...",
+      formError:
+        "Invio non riuscito. Riprova tra poco oppure scrivimi a alessandratrapasso917@gmail.com.",
+      formLocalHint:
+        "In locale il form non invia email. Prova dalla versione online (Netlify) oppure scrivimi a alessandratrapasso917@gmail.com.",
       formSuccess: "Messaggio inviato correttamente.",
       closingTitleHtml:
         "<span class=\"footer-cta__line footer-cta__line--nowrap\">Non vedo l'ora di aiutarti</span><span class=\"footer-cta__line footer-cta__line--nowrap\">a dare vita ai tuoi sogni!</span>",
@@ -229,6 +233,10 @@
       formSubmit: "Send message",
       formNote: "Your data will only be used to reply to you.",
       formSending: "Sending...",
+      formError:
+        "Submission failed. Please try again later or email me at alessandratrapasso917@gmail.com.",
+      formLocalHint:
+        "On localhost the form can't send emails. Use the live Netlify site or email me at alessandratrapasso917@gmail.com.",
       formSuccess: "Message sent successfully.",
       closingTitleHtml:
         "<span class=\"footer-cta__line footer-cta__line--nowrap\">I can't wait to help you</span><span class=\"footer-cta__line footer-cta__line--nowrap\">bring your dreams to life!</span>",
@@ -669,6 +677,9 @@
     if (!form) return;
 
     var submitButton = form.querySelector(".btn-submit");
+    var submitLabel = submitButton
+      ? submitButton.querySelector("[data-i18n='formSubmit']")
+      : null;
     var query = new URLSearchParams(window.location.search);
 
     if (query.get("contact") === "sent") {
@@ -681,13 +692,91 @@
       window.history.replaceState({}, document.title, cleanUrl);
     }
 
-    form.addEventListener("submit", function () {
+    function setSubmitState(isSending) {
       if (!submitButton) return;
-      submitButton.disabled = true;
-      submitButton.textContent = translations[currentLang].formSending;
-      if (note) {
-        note.textContent = translations[currentLang].formSending;
+
+      var dict = translations[currentLang] || translations.it;
+      submitButton.disabled = !!isSending;
+      submitButton.setAttribute("aria-disabled", isSending ? "true" : "false");
+
+      if (submitLabel) {
+        submitLabel.textContent = isSending ? dict.formSending : dict.formSubmit;
       }
+
+      if (note) {
+        note.textContent = isSending ? dict.formSending : dict.formNote;
+      }
+    }
+
+    function encodeFormPayload() {
+      // Netlify Forms expects URL-encoded bodies with `form-name`.
+      return new URLSearchParams(new FormData(form)).toString();
+    }
+
+    form.addEventListener("submit", function (event) {
+      if (!submitButton) return;
+
+      var dict = translations[currentLang] || translations.it;
+      var host = (window.location && window.location.hostname) || "";
+      var isLocalhost = host === "localhost" || host === "127.0.0.1";
+
+      // Native validation UI should still work even if we intercept submission.
+      if (typeof form.checkValidity === "function" && !form.checkValidity()) {
+        if (event && typeof event.preventDefault === "function") {
+          event.preventDefault();
+        }
+        if (typeof form.reportValidity === "function") {
+          form.reportValidity();
+        }
+        return;
+      }
+
+      // On localhost the Netlify endpoint isn't available, so show a clear hint.
+      if (isLocalhost) {
+        if (event && typeof event.preventDefault === "function") {
+          event.preventDefault();
+        }
+        if (note) {
+          note.textContent = dict.formLocalHint;
+        }
+        return;
+      }
+
+      if (!window.fetch || !window.FormData || !window.URLSearchParams) {
+        // Fallback to normal POST if the browser is very old.
+        setSubmitState(true);
+        return;
+      }
+
+      // Prefer AJAX submission on Netlify to avoid full reloads and to show feedback.
+      if (event && typeof event.preventDefault === "function") {
+        event.preventDefault();
+      }
+
+      setSubmitState(true);
+
+      window
+        .fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encodeFormPayload(),
+        })
+        .then(function (response) {
+          if (!response || !response.ok) {
+            throw new Error("form_submit_failed");
+          }
+          showSuccessToast();
+          try {
+            form.reset();
+          } catch (error) {}
+          setSubmitState(false);
+        })
+        .catch(function () {
+          setSubmitState(false);
+          if (note) {
+            note.textContent = dict.formError;
+          }
+        });
     });
   }
 
